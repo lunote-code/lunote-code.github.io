@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://lunote-code.github.io/sitemap.xml
