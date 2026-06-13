@@ -1,202 +1,285 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Lunote - Plugin-Driven Workspace</title>
+
+  <title>Lunote - Plugin-Driven Workspace for Notes & Thinking</title>
+
+  <meta name="description" content="Lunote is a plugin-driven workspace that turns notes into a customizable system for thinking, writing, and productivity workflows." />
+
+  <link rel="canonical" href="https://lunote-code.github.io/" />
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="Lunote - Plugin-Driven Workspace" />
+  <meta property="og:description" content="Turn notes into a customizable thinking system." />
+  <meta property="og:image" content="https://github.com/lunote-code/lunote/blob/main/docs/assets/screenshots/head-view.png?raw=true" />
 
   <style>
+    :root {
+      --bg: #ffffff;
+      --text: #111111;
+      --muted: #666666;
+      --card: #f7f7f7;
+      --border: #eaeaea;
+      --btn: #000000;
+      --btnText: #ffffff;
+    }
+
+    [data-theme="dark"] {
+      --bg: #0f0f0f;
+      --text: #ffffff;
+      --muted: #b5b5b5;
+      --card: #1a1a1a;
+      --border: #2a2a2a;
+      --btn: #ffffff;
+      --btnText: #000000;
+    }
+
     body {
-      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial;
       margin: 0;
-      padding: 0;
-      color: #111;
-      background: #fff;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial;
+      background: var(--bg);
+      color: var(--text);
       line-height: 1.6;
+      transition: 0.3s ease;
     }
 
     .container {
       max-width: 900px;
       margin: 0 auto;
       padding: 80px 20px;
+      text-align: center;
     }
 
-    .hero {
-      text-align: center;
-      padding-bottom: 60px;
+    /* 🌙 Theme toggle */
+    .theme-toggle {
+      position: fixed;
+      top: 20px;
+      right: 20px;
+      padding: 8px 12px;
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      cursor: pointer;
+      background: var(--card);
+      color: var(--text);
+      font-size: 14px;
+      user-select: none;
     }
 
     h1 {
-      font-size: 44px;
-      margin-bottom: 16px;
+      font-size: 52px;
+      margin-bottom: 10px;
+      letter-spacing: -0.5px;
     }
 
     .subtitle {
       font-size: 20px;
-      color: #444;
-      margin-bottom: 30px;
+      color: var(--muted);
+      max-width: 720px;
+      margin: 0 auto 30px;
     }
 
-    .cta {
+    .cta-group {
+      margin-top: 20px;
+    }
+
+    .btn {
       display: inline-block;
-      margin: 10px;
-      padding: 12px 20px;
-      border-radius: 8px;
+      margin: 8px;
+      padding: 12px 18px;
+      border-radius: 10px;
       text-decoration: none;
       font-weight: 600;
+      transition: 0.2s;
     }
 
     .primary {
-      background: #000;
-      color: #fff;
+      background: var(--btn);
+      color: var(--btnText);
     }
 
     .secondary {
-      border: 1px solid #000;
-      color: #000;
-    }
-
-    .section {
-      margin-top: 60px;
-    }
-
-    h2 {
-      font-size: 26px;
-      margin-bottom: 12px;
-    }
-
-    .grid {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 20px;
-    }
-
-    .card {
-      border: 1px solid #eee;
-      padding: 20px;
-      border-radius: 10px;
-    }
-
-    .footer {
-      text-align: center;
-      margin-top: 80px;
-      font-size: 14px;
-      color: #888;
+      border: 1px solid var(--text);
+      color: var(--text);
     }
 
     img {
       width: 100%;
-      border-radius: 10px;
-      margin-top: 20px;
-      border: 1px solid #eee;
+      margin-top: 40px;
+      border-radius: 12px;
+      border: 1px solid var(--border);
+    }
+
+    section {
+      margin-top: 80px;
+      text-align: center;
+    }
+
+    h2 {
+      font-size: 28px;
+      margin-bottom: 16px;
+    }
+
+    p {
+      max-width: 760px;
+      margin: 0 auto;
+      color: var(--muted);
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 16px;
+      margin-top: 30px;
+    }
+
+    .card {
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 18px;
+      text-align: left;
+      background: var(--card);
+    }
+
+    .card strong {
+      display: block;
+      margin-bottom: 6px;
+    }
+
+    .footer {
+      margin-top: 80px;
+      font-size: 13px;
+      color: var(--muted);
+      text-align: center;
     }
 
     @media (max-width: 768px) {
-      h1 { font-size: 32px; }
-      .grid { grid-template-columns: 1fr; }
+      h1 { font-size: 36px; }
+      .subtitle { font-size: 18px; }
     }
+
   </style>
 </head>
 
 <body>
 
+<!-- 🌙 Theme Toggle -->
+<div class="theme-toggle" onclick="toggleTheme()">
+  🌙 / ☀️
+</div>
+
 <div class="container">
 
   <!-- HERO -->
-  <div class="hero">
-    <h1>Lunote</h1>
-    <div class="subtitle">
-      A plugin-driven workspace for thinking, writing, and building your own system.
-    </div>
+  <h1>Lunote</h1>
 
-    <a class="cta primary" href="https://github.com/lunote-code/lunote/releases">
-      🚀 Download Now
+  <div class="subtitle">
+    Plugin-driven workspace for notes, thinking, and building your own productivity system.
+  </div>
+
+  <div class="cta-group">
+    <a class="btn primary" href="https://github.com/lunote-code/lunote/releases">
+      🚀 Download
     </a>
-
-    <a class="cta secondary" href="https://github.com/lunote-code/lunote">
+    <a class="btn secondary" href="https://github.com/lunote-code/lunote">
       View on GitHub
     </a>
-
-    <p style="margin-top:20px;color:#666;">
-      Turn notes into a customizable workflow.
-    </p>
   </div>
 
   <!-- IMAGE -->
-  <img src="https://github.com/lunote-code/lunote/blob/main/docs/assets/screenshots/head-view.png?raw=true" />
-
-  <!-- WHO IS IT FOR -->
-  <div class="section">
-    <h2>Built for people who think in systems</h2>
-    <div class="grid">
-      <div class="card">
-        <strong>Developers</strong>
-        <p>Build a customizable knowledge and productivity workspace.</p>
-      </div>
-      <div class="card">
-        <strong>Writers</strong>
-        <p>Organize ideas into structured thinking systems.</p>
-      </div>
-      <div class="card">
-        <strong>Builders</strong>
-        <p>Create your own workflows using plugins.</p>
-      </div>
-      <div class="card">
-        <strong>Thinkers</strong>
-        <p>Turn notes into structured knowledge systems.</p>
-      </div>
-    </div>
-  </div>
+  <img
+    src="https://github.com/lunote-code/lunote/blob/main/docs/assets/screenshots/head-view.png?raw=true"
+    alt="Lunote workspace interface"
+  />
 
   <!-- VALUE -->
-  <div class="section">
-    <h2>Your notes should adapt to you</h2>
+  <section>
+    <h2>Turn notes into a system</h2>
     <p>
-      Lunote is designed to move beyond static note-taking.
-      With a plugin-driven architecture, you can extend and shape your workspace
-      based on how you think and work.
+      Lunote is a lightweight plugin-driven workspace designed for developers, writers,
+      and thinkers who want to build a personalized knowledge system instead of using rigid tools.
     </p>
-  </div>
+  </section>
 
-  <!-- FEATURES -->
-  <div class="section">
-    <h2>What you can do</h2>
+  <!-- USE CASE -->
+  <section>
+    <h2>Built for real workflows</h2>
+
     <div class="grid">
       <div class="card">
-        <strong>Extend with plugins</strong>
-        <p>Add new capabilities when you need them.</p>
+        <strong>Second Brain</strong>
+        Build your personal knowledge system.
       </div>
+
       <div class="card">
-        <strong>Build your workflow</strong>
-        <p>Customize how you write, organize, and think.</p>
+        <strong>Developer Notes</strong>
+        Organize technical knowledge clearly.
       </div>
+
       <div class="card">
-        <strong>Stay lightweight</strong>
-        <p>Fast, clean, and distraction-free.</p>
+        <strong>Writing System</strong>
+        Structure ideas into reusable blocks.
       </div>
+
       <div class="card">
-        <strong>Grow with ecosystem</strong>
-        <p>Support for future tools and extensions.</p>
+        <strong>Custom Workflows</strong>
+        Extend with plugins when needed.
       </div>
     </div>
-  </div>
+  </section>
 
-  <!-- FINAL CTA -->
-  <div class="section" style="text-align:center;">
-    <h2>Start building your own workspace</h2>
-    <p>Lunote is not just a note app — it's a system you shape.</p>
+  <!-- DIFFERENTIATION -->
+  <section>
+    <h2>Why Lunote</h2>
+    <p>
+      Unlike traditional note apps, Lunote is built around a plugin-driven architecture.
+      It adapts to your workflow instead of forcing you into a fixed system.
+    </p>
+  </section>
 
-    <a class="cta primary" href="https://github.com/lunote-code/lunote/releases">
-      🚀 Download Lunote
-    </a>
-  </div>
+  <!-- CTA -->
+  <section>
+    <h2>Start building your workspace</h2>
+    <p>Download Lunote and design your own thinking system.</p>
 
-  <!-- FOOTER -->
+    <div class="cta-group">
+      <a class="btn primary" href="https://github.com/lunote-code/lunote/releases">
+        🚀 Get Lunote
+      </a>
+    </div>
+  </section>
+
   <div class="footer">
-    © Lunote · Plugin-driven workspace for thinking
+    © Lunote · Plugin-driven workspace for thinking & productivity
   </div>
 
 </div>
+
+<!-- 🌙 Theme Script -->
+<script>
+  function toggleTheme() {
+    const root = document.documentElement;
+    const current = root.getAttribute("data-theme");
+
+    if (current === "dark") {
+      root.removeAttribute("data-theme");
+      localStorage.setItem("theme", "light");
+    } else {
+      root.setAttribute("data-theme", "dark");
+      localStorage.setItem("theme", "dark");
+    }
+  }
+
+  // init theme
+  (function () {
+    const saved = localStorage.getItem("theme");
+    if (saved === "dark") {
+      document.documentElement.setAttribute("data-theme", "dark");
+    }
+  })();
+</script>
 
 </body>
 </html>
