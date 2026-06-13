@@ -1,147 +1,202 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Lunote - Plugin-Driven Workspace</title>
 
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <style>
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial;
+      margin: 0;
+      padding: 0;
+      color: #111;
+      background: #fff;
+      line-height: 1.6;
+    }
 
-<title>Lunote — Developer Knowledge System (Local-first, Open Source)</title>
+    .container {
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 80px 20px;
+    }
 
-<meta name="description" content="Lunote is a local-first developer knowledge system. Capture ideas instantly, organize structured knowledge, and build long-term thinking workflows with plugins and export support." />
+    .hero {
+      text-align: center;
+      padding-bottom: 60px;
+    }
 
-<meta name="keywords" content="developer knowledge system, note taking app, PKM tool, markdown editor, local-first notes, open source productivity tool, knowledge base software" />
+    h1 {
+      font-size: 44px;
+      margin-bottom: 16px;
+    }
 
-<link rel="canonical" href="https://lunote-code.github.io/" />
-<meta name="robots" content="index, follow" />
+    .subtitle {
+      font-size: 20px;
+      color: #444;
+      margin-bottom: 30px;
+    }
 
-<!-- Open Graph -->
-<meta property="og:title" content="Lunote — Developer Knowledge System" />
-<meta property="og:description" content="Capture, organize, and extend developer knowledge." />
-<meta property="og:type" content="website" />
+    .cta {
+      display: inline-block;
+      margin: 10px;
+      padding: 12px 20px;
+      border-radius: 8px;
+      text-decoration: none;
+      font-weight: 600;
+    }
 
-<style>
-body{margin:0;font-family:Arial;background:#0b1220;color:#e5e7eb}
-.container{max-width:1100px;margin:auto;padding:60px 20px}
-.hero{text-align:center;padding:120px 20px}
-h1{font-size:56px;margin:20px 0}
-p{color:#94a3b8;line-height:1.7}
-.badge{color:#a5b4fc;border:1px solid #334;padding:6px 10px;border-radius:999px;display:inline-block}
-.btn{display:inline-block;margin-top:20px;padding:12px 18px;background:#6366f1;
-color:white;border-radius:10px;text-decoration:none}
-.btn.secondary{background:transparent;border:1px solid #333;margin-left:10px}
+    .primary {
+      background: #000;
+      color: #fff;
+    }
 
-.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:16px;margin-top:30px}
+    .secondary {
+      border: 1px solid #000;
+      color: #000;
+    }
 
-.card{background:rgba(255,255,255,0.03);padding:18px;border-radius:12px;border:1px solid rgba(255,255,255,0.08)}
-.card:hover{border-color:#6366f1}
+    .section {
+      margin-top: 60px;
+    }
 
-.section{margin-top:80px}
+    h2 {
+      font-size: 26px;
+      margin-bottom: 12px;
+    }
 
-footer{text-align:center;margin:80px 0;color:#64748b}
-</style>
+    .grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 20px;
+    }
 
+    .card {
+      border: 1px solid #eee;
+      padding: 20px;
+      border-radius: 10px;
+    }
+
+    .footer {
+      text-align: center;
+      margin-top: 80px;
+      font-size: 14px;
+      color: #888;
+    }
+
+    img {
+      width: 100%;
+      border-radius: 10px;
+      margin-top: 20px;
+      border: 1px solid #eee;
+    }
+
+    @media (max-width: 768px) {
+      h1 { font-size: 32px; }
+      .grid { grid-template-columns: 1fr; }
+    }
+  </style>
 </head>
 
 <body>
 
-<header class="hero">
-
-<div class="badge">Open Source · Local-first · Developer Tool</div>
-
-<h1>Lunote — Developer Knowledge System</h1>
-
-<p>
-A local-first system for capturing ideas, organizing structured knowledge,
-and building long-term thinking workflows for developers.
-</p>
-
-<a class="btn" href="https://github.com/lunote-code/lunote">View on GitHub</a>
-<a class="btn secondary" href="/features/">Explore Features</a>
-
-</header>
-
 <div class="container">
 
-<!-- SEO ENTRY BLOCK -->
-<section class="section">
-<h2>Built for Developer Knowledge Workflows</h2>
-<p>
-Lunote is a developer knowledge system, markdown note-taking app,
-local-first PKM tool, and structured thinking workspace.
-</p>
+  <!-- HERO -->
+  <div class="hero">
+    <h1>Lunote</h1>
+    <div class="subtitle">
+      A plugin-driven workspace for thinking, writing, and building your own system.
+    </div>
 
-<p>
-It helps developers searching for:
-note taking app for developers, markdown knowledge base,
-local-first notes, and open source productivity tools.
-</p>
-</section>
+    <a class="cta primary" href="https://github.com/lunote-code/lunote/releases">
+      🚀 Download Now
+    </a>
 
-<!-- CORE VALUE -->
-<section class="section">
-<h2>Core System</h2>
+    <a class="cta secondary" href="https://github.com/lunote-code/lunote">
+      View on GitHub
+    </a>
 
-<div class="grid">
+    <p style="margin-top:20px;color:#666;">
+      Turn notes into a customizable workflow.
+    </p>
+  </div>
 
-<div class="card">
-<h3>⚡ Capture</h3>
-<p>Instant snapshots for fast idea capture while coding.</p>
+  <!-- IMAGE -->
+  <img src="https://github.com/lunote-code/lunote/blob/main/docs/assets/screenshots/head-view.png?raw=true" />
+
+  <!-- WHO IS IT FOR -->
+  <div class="section">
+    <h2>Built for people who think in systems</h2>
+    <div class="grid">
+      <div class="card">
+        <strong>Developers</strong>
+        <p>Build a customizable knowledge and productivity workspace.</p>
+      </div>
+      <div class="card">
+        <strong>Writers</strong>
+        <p>Organize ideas into structured thinking systems.</p>
+      </div>
+      <div class="card">
+        <strong>Builders</strong>
+        <p>Create your own workflows using plugins.</p>
+      </div>
+      <div class="card">
+        <strong>Thinkers</strong>
+        <p>Turn notes into structured knowledge systems.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- VALUE -->
+  <div class="section">
+    <h2>Your notes should adapt to you</h2>
+    <p>
+      Lunote is designed to move beyond static note-taking.
+      With a plugin-driven architecture, you can extend and shape your workspace
+      based on how you think and work.
+    </p>
+  </div>
+
+  <!-- FEATURES -->
+  <div class="section">
+    <h2>What you can do</h2>
+    <div class="grid">
+      <div class="card">
+        <strong>Extend with plugins</strong>
+        <p>Add new capabilities when you need them.</p>
+      </div>
+      <div class="card">
+        <strong>Build your workflow</strong>
+        <p>Customize how you write, organize, and think.</p>
+      </div>
+      <div class="card">
+        <strong>Stay lightweight</strong>
+        <p>Fast, clean, and distraction-free.</p>
+      </div>
+      <div class="card">
+        <strong>Grow with ecosystem</strong>
+        <p>Support for future tools and extensions.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- FINAL CTA -->
+  <div class="section" style="text-align:center;">
+    <h2>Start building your own workspace</h2>
+    <p>Lunote is not just a note app — it's a system you shape.</p>
+
+    <a class="cta primary" href="https://github.com/lunote-code/lunote/releases">
+      🚀 Download Lunote
+    </a>
+  </div>
+
+  <!-- FOOTER -->
+  <div class="footer">
+    © Lunote · Plugin-driven workspace for thinking
+  </div>
+
 </div>
-
-<div class="card">
-<h3>🧠 Organize</h3>
-<p>Structured knowledge base with topics and hierarchy.</p>
-</div>
-
-<div class="card">
-<h3>✍️ Edit</h3>
-<p>Switch between visual editor and source mode.</p>
-</div>
-
-<div class="card">
-<h3>🔌 Extend</h3>
-<p>Plugin system for workflows and integrations.</p>
-</div>
-
-<div class="card">
-<h3>📤 Export</h3>
-<p>Export knowledge anytime in multiple formats.</p>
-</div>
-
-</div>
-</section>
-
-<!-- SEO CONTENT BLOCK -->
-<section class="section">
-<h2>Why Developers Use Lunote</h2>
-
-<p>
-Traditional note-taking apps are not designed for structured thinking.
-Lunote bridges the gap between notes, documentation, and knowledge systems.
-</p>
-
-<p>
-It is a modern alternative for developers who need more than markdown notes.
-</p>
-</section>
-
-<!-- BLOG ENTRY -->
-<section class="section">
-<h2>Developer Blog</h2>
-
-<p>
-Learn about developer productivity, knowledge systems, and structured thinking workflows.
-</p>
-
-<a class="btn" href="/blog/">Read Blog</a>
-
-</section>
-
-</div>
-
-<footer>
-© 2026 Lunote · Developer Knowledge System
-</footer>
 
 </body>
 </html>
