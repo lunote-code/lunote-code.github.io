@@ -1,155 +1,268 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Lunote — Developer Note Taking App</title>
 
-  <style>
-    body {
-      margin: 0;
-      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial;
-      background: radial-gradient(circle at top, #111827, #0b0f19);
-      color: #e5e7eb;
-    }
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 
-    .container {
-      max-width: 1000px;
-      margin: 0 auto;
-      padding: 80px 24px;
-    }
+<title>Lunote — Open Source Note Taking App for Developers</title>
 
-    .hero {
-      text-align: center;
-      padding: 80px 20px;
-    }
+<!-- ================= SEO CORE ================= -->
+<meta name="description" content="Lunote is a fast, local-first open source note-taking app for developers. Organize knowledge, write markdown notes, and stay productive with a clean interface." />
 
-    .badge {
-      display: inline-block;
-      padding: 6px 12px;
-      background: rgba(99,102,241,0.2);
-      border: 1px solid rgba(99,102,241,0.4);
-      border-radius: 999px;
-      font-size: 12px;
-      color: #a5b4fc;
-    }
+<meta name="keywords" content="note taking app, developer notes, markdown app, open source productivity tool, local first notes, PKM tool, knowledge management" />
 
-    h1 {
-      font-size: 48px;
-      margin: 20px 0;
-    }
+<meta name="robots" content="index, follow" />
+<link rel="canonical" href="https://lunote-code.github.io/" />
 
-    p.subtitle {
-      font-size: 18px;
-      color: #9ca3af;
-      max-width: 600px;
-      margin: 0 auto;
-    }
+<!-- ================= OPEN GRAPH ================= -->
+<meta property="og:title" content="Lunote — Developer Note Taking App" />
+<meta property="og:description" content="Fast, local-first note-taking app for developers. Open source and productivity focused." />
+<meta property="og:type" content="website" />
+<meta property="og:url" content="https://lunote-code.github.io/" />
+<meta property="og:image" content="https://lunote-code.github.io/preview.png" />
 
-    .btn {
-      margin-top: 30px;
-      display: inline-block;
-      padding: 12px 20px;
-      background: #6366f1;
-      color: white;
-      border-radius: 10px;
-      text-decoration: none;
-      font-weight: 500;
-    }
+<!-- Twitter -->
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="Lunote — Developer Note App" />
+<meta name="twitter:description" content="Open source local-first note-taking app for developers." />
 
-    .section {
-      margin-top: 80px;
-    }
+<!-- ================= STRUCTURED DATA ================= -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "SoftwareApplication",
+  "name": "Lunote",
+  "applicationCategory": "ProductivityApplication",
+  "operatingSystem": "Windows, macOS, Linux",
+  "description": "Open source developer note-taking app with local-first architecture.",
+  "url": "https://lunote-code.github.io/",
+  "offers": {
+    "@type": "Offer",
+    "price": "0",
+    "priceCurrency": "USD"
+  }
+}
+</script>
 
-    .grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-      gap: 20px;
-      margin-top: 30px;
-    }
+<style>
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto;
+  background: radial-gradient(circle at top, #0f172a, #020617);
+  color: #e5e7eb;
+}
 
-    .card {
-      padding: 20px;
-      background: rgba(255,255,255,0.03);
-      border: 1px solid rgba(255,255,255,0.08);
-      border-radius: 14px;
-    }
+/* layout */
+.container {
+  max-width: 1100px;
+  margin: auto;
+  padding: 60px 20px;
+}
 
-    .card h3 {
-      margin: 0 0 10px;
-      color: #c7d2fe;
-    }
+.hero {
+  text-align: center;
+  padding: 100px 20px 40px;
+}
 
-    footer {
-      text-align: center;
-      margin-top: 100px;
-      color: #6b7280;
-      font-size: 14px;
-    }
-  </style>
+.badge {
+  display: inline-block;
+  padding: 6px 12px;
+  background: rgba(99,102,241,0.15);
+  border: 1px solid rgba(99,102,241,0.35);
+  border-radius: 999px;
+  color: #a5b4fc;
+  font-size: 12px;
+}
+
+/* SEO H1 VERY IMPORTANT */
+h1 {
+  font-size: 58px;
+  margin: 20px 0 10px;
+}
+
+/* SEO sections */
+h2 {
+  margin-top: 80px;
+}
+
+.subtitle {
+  color: #94a3b8;
+  font-size: 18px;
+  max-width: 750px;
+  margin: auto;
+}
+
+.btn {
+  margin-top: 25px;
+  display: inline-block;
+  padding: 12px 18px;
+  background: #6366f1;
+  color: white;
+  border-radius: 10px;
+  text-decoration: none;
+}
+
+/* features */
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 18px;
+  margin-top: 25px;
+}
+
+.card {
+  padding: 18px;
+  border-radius: 14px;
+  background: rgba(255,255,255,0.03);
+  border: 1px solid rgba(255,255,255,0.08);
+}
+
+/* screenshots */
+.gallery {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 18px;
+  margin-top: 30px;
+}
+
+.screenshot {
+  border-radius: 14px;
+  overflow: hidden;
+  height: 220px;
+  border: 1px solid rgba(255,255,255,0.08);
+}
+
+.screenshot img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* SEO blog teaser */
+.blog-box {
+  margin-top: 30px;
+  padding: 18px;
+  border-radius: 14px;
+  border: 1px solid rgba(255,255,255,0.08);
+  background: rgba(255,255,255,0.02);
+}
+
+/* footer */
+footer {
+  text-align: center;
+  margin-top: 80px;
+  color: #64748b;
+  font-size: 14px;
+}
+</style>
+
 </head>
 
 <body>
 
-  <div class="hero">
-    <div class="badge">Open Source · Developer Tool</div>
+<!-- ================= HERO (SEO ENTRY POINT) ================= -->
+<header class="hero">
 
-    <h1>Lunote</h1>
+  <div class="badge">Open Source · Developer Productivity Tool</div>
 
-    <p class="subtitle">
-      A modern, lightweight note-taking app built for developers.
-      Capture ideas fast, organize knowledge, and stay in flow.
-    </p>
+  <h1>Lunote — Open Source Note Taking App for Developers</h1>
 
-    <a class="btn" href="https://github.com/lunote-code/lunote-code">
-      View on GitHub
-    </a>
-  </div>
+  <p class="subtitle">
+    A fast, local-first note-taking app designed for developers who need structured thinking, markdown support, and distraction-free workflow.
+  </p>
 
-  <div class="container">
+  <a class="btn" href="https://github.com/lunote-code/lunote">
+    View on GitHub
+  </a>
 
-    <div class="section">
-      <h2>Why Lunote</h2>
-      <p style="color:#9ca3af;">
-        Built for developers who think in structure, not clutter.
-      </p>
-    </div>
+</header>
+
+<div class="container">
+
+  <!-- ================= FEATURES ================= -->
+  <section>
+    <h2>Developer Note Taking Tool Features</h2>
 
     <div class="grid">
       <div class="card">
-        <h3>⚡ Fast Capture</h3>
-        <p>Write ideas instantly without friction or slow UI.</p>
+        <h3>⚡ Fast Capture Notes</h3>
+        <p>Instantly capture ideas without breaking your flow.</p>
       </div>
 
       <div class="card">
-        <h3>🧠 Developer Friendly</h3>
-        <p>Markdown-style thinking for structured notes.</p>
+        <h3>🧠 Structured Knowledge</h3>
+        <p>Organize notes like code with clean structure and hierarchy.</p>
       </div>
 
       <div class="card">
-        <h3>🔒 Local First</h3>
-        <p>Your notes stay with you. Privacy by design.</p>
-      </div>
-
-      <div class="card">
-        <h3>🚀 Open Source</h3>
-        <p>Fully transparent and community-driven.</p>
+        <h3>🔒 Local-first Storage</h3>
+        <p>Your data stays on your device with privacy by default.</p>
       </div>
     </div>
+  </section>
 
-    <div class="section">
-      <h2>Built for clarity</h2>
-      <p style="color:#9ca3af;">
-        Inspired by the idea that developers need a distraction-free space
-        to think and build.
+  <!-- ================= SCREENSHOTS ================= -->
+  <section>
+    <h2>Lunote App Screenshots</h2>
+
+    <div class="gallery">
+
+      <div class="screenshot">
+        <img src="https://github.com/lunote-code/lunote/blob/main/docs/assets/screenshots/head-view.png?raw=true"
+             alt="Lunote dashboard overview" />
+      </div>
+
+      <div class="screenshot">
+        <img src="https://github.com/lunote-code/lunote/blob/main/docs/assets/screenshots/code-view.png?raw=true"
+             alt="Lunote markdown editor view" />
+      </div>
+
+      <div class="screenshot">
+        <img src="https://github.com/lunote-code/lunote/blob/main/docs/assets/screenshots/graph.png?raw=true"
+             alt="Lunote knowledge graph visualization" />
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ================= SEO CONTENT BLOCK (LONG-TAIL TRAFFIC) ================= -->
+  <section>
+    <h2>Best Note Taking App for Developers</h2>
+
+    <p style="color:#94a3b8; max-width:750px;">
+      Lunote is an open source alternative to traditional note taking apps.
+      It is designed for developers who prefer markdown-based workflows,
+      local-first storage, and fast knowledge capture systems.
+    </p>
+
+    <p style="color:#94a3b8; max-width:750px;">
+      If you are looking for a developer note taking app, markdown notes tool,
+      or personal knowledge management system (PKM), Lunote provides a clean and minimal solution.
+    </p>
+  </section>
+
+  <!-- ================= BLOG ENTRY (SEO GROWTH ENGINE) ================= -->
+  <section>
+    <h2>Developer Blog & Guides</h2>
+
+    <div class="blog-box">
+      <h3>📌 Coming Soon: Developer Guides</h3>
+      <p style="color:#94a3b8;">
+        We are building tutorials on note-taking workflows, PKM systems, and developer productivity.
       </p>
+
+      <a class="btn" href="https://github.com/lunote-code/lunote">
+        Follow on GitHub
+      </a>
     </div>
+  </section>
 
-    <footer>
-      © 2026 Lunote · Built with ❤️ for developers
-    </footer>
+</div>
 
-  </div>
+<footer>
+  © 2026 Lunote · Open Source Developer Tool
+</footer>
 
 </body>
 </html>
