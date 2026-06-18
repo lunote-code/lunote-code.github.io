@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Lunote Blog</title>
+    <link>https://lunote-code.github.io/blog/</link>
+    <description>Local-first Markdown notes, PKM, and developer productivity</description>
+    <language>en-us</language>
+    <lastBuildDate>Sat, 14 Jun 2026 00:00:00 GMT</lastBuildDate>
+    <atom:link href="https://lunote-code.github.io/feed.xml" rel="self" type="application/rss+xml" />
+
+    <item>
+      <title>Markdown files vs knowledge systems for developers</title>
+      <link>https://lunote-code.github.io/blog/markdown-vs-knowledge-systems/</link>
+      <guid isPermaLink="true">https://lunote-code.github.io/blog/markdown-vs-knowledge-systems/</guid>
+      <pubDate>Sun, 01 Jun 2026 00:00:00 GMT</pubDate>
+      <description>Plain Markdown is the right foundation—but folders alone are not a graph. What wiki links and backlinks add on top of .md files.</description>
+    </item>
+
+    <item>
+      <title>How structured thinking improves coding workflows</title>
+      <link>https://lunote-code.github.io/blog/structured-thinking-for-coders/</link>
+      <guid isPermaLink="true">https://lunote-code.github.io/blog/structured-thinking-for-coders/</guid>
+      <pubDate>Sat, 10 May 2026 00:00:00 GMT</pubDate>
+      <description>Linking design decisions, ADRs, and runbooks turns one-off debugging into durable team memory.</description>
+    </item>
+
+    <item>
+      <title>Local-first apps and the future of productivity tools</title>
+      <link>https://lunote-code.github.io/blog/local-first-productivity/</link>
+      <guid isPermaLink="true">https://lunote-code.github.io/blog/local-first-productivity/</guid>
+      <pubDate>Wed, 02 Apr 2026 00:00:00 GMT</pubDate>
+      <description>Why offline-capable, file-based tools are winning back trust from cloud-only note platforms.</description>
+    </item>
+
+    <item>
+      <title>Why developers need a knowledge system—not just notes</title>
+      <link>https://lunote-code.github.io/blog/knowledge-system-vs-notes/</link>
+      <guid isPermaLink="true">https://lunote-code.github.io/blog/knowledge-system-vs-notes/</guid>
+      <pubDate>Sun, 08 Mar 2026 00:00:00 GMT</pubDate>
+      <description>Scattered notes capture facts; a system captures relationships, context, and reusable thinking patterns.</description>
+    </item>
+  </channel>
+</rss>

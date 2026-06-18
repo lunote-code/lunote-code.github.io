@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <script>
+    try {
+      if (localStorage.getItem('lunote-theme') === 'dark') {
+        document.documentElement.dataset.theme = 'dark';
+      }
+    } catch (e) {}
+  </script>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Why Developers Need a Knowledge System—Not Just Notes | Lunote Blog</title>
+  <meta name="description" content="Scattered notes capture facts; a knowledge system captures relationships and context. Learn why developers benefit from wiki links, backlinks, and structured PKM." />
+  <link rel="canonical" href="https://lunote-code.github.io/blog/knowledge-system-vs-notes/" />
+  <link rel="alternate" hreflang="en" href="https://lunote-code.github.io/blog/knowledge-system-vs-notes/" />
+  <link rel="alternate" hreflang="zh-Hans" href="https://lunote-code.github.io/zh/blog/knowledge-system-vs-notes/" />
+  <link rel="alternate" hreflang="x-default" href="https://lunote-code.github.io/blog/knowledge-system-vs-notes/" />
+  <link rel="icon" href="/assets/favicon.svg" type="image/svg+xml" />
+  <meta property="og:type" content="article" />
+  <meta property="og:site_name" content="Lunote" />
+  <meta property="og:locale" content="en_US" />
+  <meta property="og:url" content="https://lunote-code.github.io/blog/knowledge-system-vs-notes/" />
+  <meta property="og:title" content="Why developers need a knowledge system—not just notes" />
+  <meta property="og:description" content="Scattered notes capture facts; a system captures relationships, context, and reusable thinking patterns." />
+  <meta property="og:image" content="https://raw.githubusercontent.com/lunote-code/lunote/main/docs/assets/screenshots/graph.png" />
+  <meta property="article:published_time" content="2026-03-08" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Why developers need a knowledge system—not just notes" />
+  <meta name="twitter:description" content="Scattered notes capture facts; a system captures relationships, context, and reusable thinking patterns." />
+  <meta name="twitter:image" content="https://raw.githubusercontent.com/lunote-code/lunote/main/docs/assets/screenshots/graph.png" />
+  <link rel="stylesheet" href="/assets/site.css" />
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BlogPosting",
+    "headline": "Why developers need a knowledge system—not just notes",
+    "description": "Scattered notes capture facts; a knowledge system captures relationships and context.",
+    "datePublished": "2026-03-08",
+    "author": { "@type": "Organization", "name": "Lunote" },
+    "publisher": { "@type": "Organization", "name": "Lunote", "url": "https://lunote-code.github.io/" },
+    "mainEntityOfPage": "https://lunote-code.github.io/blog/knowledge-system-vs-notes/",
+    "image": "https://raw.githubusercontent.com/lunote-code/lunote/main/docs/assets/screenshots/graph.png"
+  }
+  </script>
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+  <header class="site-header">
+    <div class="site-header-inner">
+      <input type="checkbox" id="nav-toggle" class="nav-switch" aria-hidden="true" tabindex="-1" />
+      <a class="brand" href="/"><img src="/assets/favicon.svg" width="28" height="28" alt="" /> Lunote</a>
+      <nav class="site-nav" aria-label="Primary">
+        <a href="/">Home</a>
+        <a href="/#themes">Themes</a>
+        <a href="/blog/" aria-current="page">Blog</a>
+        <a href="https://github.com/lunote-code/lunote">GitHub</a>
+        <a class="btn btn-primary nav-download" href="https://github.com/lunote-code/lunote/releases">Download</a>
+      </nav>
+      <div class="header-actions">
+        <div class="lang-menu">
+          <button type="button" class="lang-toggle" aria-haspopup="listbox" aria-expanded="false" aria-label="Select language" title="Select language">
+            <svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 2a14.5 14.5 0 0 0 0 20 14.5 14.5 0 0 0 0-20"/><path d="M2 12h20"/></svg>
+          </button>
+          <ul class="lang-dropdown" role="listbox" aria-label="Language" hidden></ul>
+        </div>
+        <input type="checkbox" id="theme-dark" class="theme-switch" aria-label="Dark mode" tabindex="-1" />
+        <label for="theme-dark" class="theme-toggle" title="Toggle dark mode">
+          <svg class="icon-moon" viewBox="0 0 24 24" aria-hidden="true"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+          <svg class="icon-sun" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"/></svg>
+        </label>
+        <a class="btn btn-primary header-download" href="https://github.com/lunote-code/lunote/releases">Download</a>
+      </div>
+      <label for="nav-toggle" class="nav-menu-btn" aria-label="Open menu">
+        <svg class="nav-icon-open" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
+        <svg class="nav-icon-close" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 6l12 12M18 6 6 18"/></svg>
+      </label>
+    </div>
+  </header>
+
+  <main id="main" class="page">
+    <nav class="breadcrumb" aria-label="Breadcrumb">
+      <a href="/">Home</a> / <a href="/blog/">Blog</a> / Knowledge system vs notes
+    </nav>
+    <article>
+      <header class="article-header">
+        <div class="post-meta">
+          <time datetime="2026-03-08">March 8, 2026</time>
+          <span>6 min read</span>
+          <span class="post-tag">PKM</span>
+        </div>
+        <h1>Why developers need a knowledge system—not just notes</h1>
+        <p class="article-intro">
+          Most developers already take notes. The gap is not capture—it is retrieval under pressure:
+          when you revisit a bug three months later, onboard a teammate, or connect two ideas from different projects.
+        </p>
+      </header>
+      <div class="article-body">
+        <h2>Notes store answers; systems store relationships</h2>
+        <p>
+          A note might say “Redis cache TTL is 300s.” A knowledge system links that note to
+          <code>[[auth-service]]</code>, <code>[[incident-2025-11]]</code>, and your runbook on cache invalidation.
+          When any of those contexts change, you follow links instead of searching from scratch.
+        </p>
+        <h2>What a minimal system looks like</h2>
+        <ul>
+          <li><strong>Plain files</strong> — Markdown on disk, versioned with Git, syncable with any tool.</li>
+          <li><strong>Wiki links</strong> — <code>[[Note title]]</code> connects ideas without rigid folders.</li>
+          <li><strong>Backlinks</strong> — see who references a concept from anywhere in the vault.</li>
+          <li><strong>A graph view</strong> — spot clusters, orphans, and missing bridges between topics.</li>
+        </ul>
+        <blockquote>
+          You do not need a complex taxonomy on day one. Start linking the next note you write to one related note—that is already a system.
+        </blockquote>
+        <h2>Why developers feel the pain first</h2>
+        <p>
+          Codebases are graphs: modules import modules, services call services, docs reference tickets.
+          Developers intuitively think in references—but flat note apps hide that structure.
+          Tools like Lunote bring the same linking model to your personal docs without locking files in a proprietary database.
+        </p>
+        <h2>Getting started without a rewrite</h2>
+        <p>
+          Open the folder you already use—Obsidian vault, Typora project, or a <code>docs/</code> tree.
+          Add wiki links where you would otherwise paste a URL or duplicate a paragraph.
+          Let backlinks reveal which notes deserve a clearer title or a short summary at the top.
+        </p>
+      </div>
+      <aside class="article-cta">
+        <h2>Try it on your existing .md folder</h2>
+        <p>Lunote opens local Markdown vaults with built-in wiki links, backlinks, and a knowledge graph—no import step.</p>
+        <a class="btn btn-primary" href="https://github.com/lunote-code/lunote/releases">Download Lunote</a>
+      </aside>
+    </article>
+  </main>
+  <footer class="site-footer">
+    <nav aria-label="Footer"><a href="/">Home</a><a href="/#themes">Themes</a><a href="/blog/">Blog</a><a href="/feed.xml">RSS</a></nav>
+    <p>© Lunote</p>
+  </footer>
+  <script src="/assets/theme.js" defer></script>
+</body>
+</html>

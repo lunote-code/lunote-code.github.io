@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" fill="none">
+  <defs>
+    <linearGradient id="bg" x1="88" y1="48" x2="424" y2="464" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#2C3038"/>
+      <stop offset="0.52" stop-color="#1A1D24"/>
+      <stop offset="1" stop-color="#101216"/>
+    </linearGradient>
+    <linearGradient id="nFill" x1="162" y1="136" x2="352" y2="376" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#FFFFFF"/>
+      <stop offset="1" stop-color="#DDE3EA"/>
+    </linearGradient>
+    <clipPath id="iconSquircle"><rect width="512" height="512" rx="114" ry="114"/></clipPath>
+  </defs>
+  <g transform="translate(256 256) scale(0.8125) translate(-256 -256)">
+    <g clip-path="url(#iconSquircle)">
+      <rect width="512" height="512" fill="url(#bg)"/>
+      <g transform="translate(256 256) scale(0.72) translate(-256 -256)">
+        <path fill="url(#nFill)" d="M162 138h56v236H162V138zm132 0h56v236h-56V138zM218 138h56l72 236h-56l-72-236z"/>
+      </g>
+    </g>
+  </g>
+</svg>

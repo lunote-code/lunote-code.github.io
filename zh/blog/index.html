@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="zh-Hans">
+<head>
+  <meta charset="UTF-8" />
+  <script>
+    try {
+      if (localStorage.getItem('lunote-theme') === 'dark') {
+        document.documentElement.dataset.theme = 'dark';
+      }
+    } catch (e) {}
+  </script>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Lunote 博客 — 笔记、个人知识管理与开发者效率</title>
+  <meta name="description" content="关于本地优先 Markdown 笔记、个人知识管理、双链与开发者工作流的文章——Lunote 是一款在互联 .md 文件中思考与写作的桌面应用。" />
+  <link rel="canonical" href="https://lunote-code.github.io/zh/blog/" />
+  <link rel="alternate" hreflang="en" href="https://lunote-code.github.io/blog/" />
+  <link rel="alternate" hreflang="zh-Hans" href="https://lunote-code.github.io/zh/blog/" />
+  <link rel="alternate" hreflang="x-default" href="https://lunote-code.github.io/blog/" />
+  <link rel="icon" href="/assets/favicon.svg" type="image/svg+xml" />
+  <link rel="alternate" type="application/rss+xml" title="Lunote Blog" href="https://lunote-code.github.io/feed.xml" />
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="Lunote" />
+  <meta property="og:locale" content="zh_CN" />
+  <meta property="og:url" content="https://lunote-code.github.io/zh/blog/" />
+  <meta property="og:title" content="Lunote 博客" />
+  <meta property="og:description" content="本地优先笔记、知识系统与 Markdown 工作流。" />
+  <meta property="og:image" content="https://raw.githubusercontent.com/lunote-code/lunote/main/docs/assets/screenshots/head-view.png" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <link rel="stylesheet" href="/assets/site.css" />
+</head>
+<body>
+  <a class="skip-link" href="#main">跳转到正文</a>
+  <header class="site-header">
+    <div class="site-header-inner">
+      <input type="checkbox" id="nav-toggle" class="nav-switch" aria-hidden="true" tabindex="-1" />
+      <a class="brand" href="/zh/"><img src="/assets/favicon.svg" width="28" height="28" alt="" /> Lunote</a>
+      <nav class="site-nav" aria-label="主导航">
+        <a href="/zh/">首页</a>
+        <a href="/zh/#themes">主题</a>
+        <a href="/zh/blog/" aria-current="page">博客</a>
+        <a href="https://github.com/lunote-code/lunote">GitHub</a>
+        <a class="btn btn-primary nav-download" href="https://github.com/lunote-code/lunote/releases">下载</a>
+      </nav>
+      <div class="header-actions">
+        <div class="lang-menu">
+          <button type="button" class="lang-toggle" aria-haspopup="listbox" aria-expanded="false" aria-label="选择语言" title="选择语言">
+            <svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 2a14.5 14.5 0 0 0 0 20 14.5 14.5 0 0 0 0-20"/><path d="M2 12h20"/></svg>
+          </button>
+          <ul class="lang-dropdown" role="listbox" aria-label="语言" hidden></ul>
+        </div>
+        <input type="checkbox" id="theme-dark" class="theme-switch" aria-label="深色模式" tabindex="-1" />
+        <label for="theme-dark" class="theme-toggle" title="切换深色模式">
+          <svg class="icon-moon" viewBox="0 0 24 24" aria-hidden="true"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+          <svg class="icon-sun" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"/></svg>
+        </label>
+        <a class="btn btn-primary header-download" href="https://github.com/lunote-code/lunote/releases">下载</a>
+      </div>
+      <label for="nav-toggle" class="nav-menu-btn" aria-label="打开菜单">
+        <svg class="nav-icon-open" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
+        <svg class="nav-icon-close" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 6l12 12M18 6 6 18"/></svg>
+      </label>
+    </div>
+  </header>
+  <main id="main" class="page">
+    <header class="blog-hero">
+      <h1>Lunote 博客</h1>
+      <p>围绕个人知识管理、本地优先工具与 Markdown 工作流的实践文章——如何把一文件夹笔记，慢慢养成随时间复利增长的知识系统。</p>
+    </header>
+    <div class="post-list">
+      <a class="post-card" href="/zh/blog/knowledge-system-vs-notes/">
+        <div class="post-meta"><time datetime="2026-03-08">2026年3月8日</time><span>约 6 分钟</span><span class="post-tag">PKM</span><span class="post-tag">第二大脑</span></div>
+        <h2>开发者需要的不是笔记堆，而是知识系统</h2>
+        <p>开发者会攒下代码片段、会议记录和架构草图——但没有链接和结构，真正需要上下文时就很难找回来。</p>
+      </a>
+      <a class="post-card" href="/zh/blog/local-first-productivity/">
+        <div class="post-meta"><time datetime="2026-04-02">2026年4月2日</time><span>约 5 分钟</span><span class="post-tag">本地优先</span><span class="post-tag">隐私</span></div>
+        <h2>本地优先：生产力工具正在往哪走</h2>
+        <p>云端笔记曾承诺同步与协作；本地优先工具把数据所有权、响应速度和离线能力还给你——同步方式也由你决定。</p>
+      </a>
+      <a class="post-card" href="/zh/blog/structured-thinking-for-coders/">
+        <div class="post-meta"><time datetime="2026-05-10">2026年5月10日</time><span>约 7 分钟</span><span class="post-tag">工作流</span><span class="post-tag">开发者</span></div>
+        <h2>结构化思维如何提升编程效率</h2>
+        <p>把设计决策、ADR 和运维手册串成一张笔记网络，一次性的排障经验才能变成团队长期记忆。</p>
+      </a>
+      <a class="post-card" href="/zh/blog/markdown-vs-knowledge-systems/">
+        <div class="post-meta"><time datetime="2026-06-01">2026年6月1日</time><span>约 6 分钟</span><span class="post-tag">Markdown</span><span class="post-tag">双链</span></div>
+        <h2>Markdown 文件够了吗？何时需要知识系统</h2>
+        <p>纯 Markdown 是对的起点——但光靠文件夹堆不出知识网络。在 .md 之上加上双链和反向链接，会改变什么。</p>
+      </a>
+    </div>
+  </main>
+  <footer class="site-footer">
+    <nav aria-label="页脚"><a href="/zh/">首页</a><a href="/zh/#themes">主题</a><a href="/zh/blog/">博客</a><a href="/feed.xml">RSS</a></nav>
+    <p>© Lunote · 本地 Markdown 笔记，双链与知识图谱</p>
+  </footer>
+  <script src="/assets/theme.js" defer></script>
+</body>
+</html>

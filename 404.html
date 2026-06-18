@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <script>
+    try {
+      if (localStorage.getItem('lunote-theme') === 'dark') {
+        document.documentElement.dataset.theme = 'dark';
+      }
+    } catch (e) {}
+  </script>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Page not found | Lunote</title>
+  <meta name="robots" content="noindex" />
+  <link rel="icon" href="/assets/favicon.svg" type="image/svg+xml" />
+  <link rel="stylesheet" href="/assets/site.css" />
+</head>
+<body>
+  <input type="checkbox" id="theme-dark" class="theme-switch" aria-label="Dark mode" tabindex="-1" aria-hidden="true" />
+  <main class="page" style="text-align:center;padding-top:120px;">
+    <h1>404</h1>
+    <p style="color:var(--text-muted);">This page does not exist. · 页面不存在</p>
+    <p>
+      <a class="btn btn-primary" href="/">Home / 首页</a>
+      <a class="btn btn-secondary" href="/zh/">中文首页</a>
+      <a class="btn btn-secondary" href="/blog/">Blog / 博客</a>
+    </p>
+  </main>
+  <script src="/assets/theme.js" defer></script>
+</body>
+</html>

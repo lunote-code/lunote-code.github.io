@@ -1,285 +1,318 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-
-  <title>Lunote - Plugin-Driven Workspace for Notes & Thinking</title>
-
-  <meta name="description" content="Lunote is a plugin-driven workspace that turns notes into a customizable system for thinking, writing, and productivity workflows." />
-
+  <script>
+    try {
+      if (localStorage.getItem('lunote-theme') === 'dark') {
+        document.documentElement.dataset.theme = 'dark';
+      }
+    } catch (e) {}
+  </script>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Lunote — Local Markdown Notes with Wiki Links &amp; Knowledge Graph</title>
+  <meta name="description" content="Lunote is a free, local-first Markdown notes app for macOS, Windows, and Linux. Write comfortably, connect notes with [[wiki links]], explore backlinks and a knowledge graph—no account required." />
+  <meta name="keywords" content="Lunote, Markdown notes, wiki links, knowledge graph, Obsidian alternative, Typora alternative, local-first, PKM, second brain" />
   <link rel="canonical" href="https://lunote-code.github.io/" />
+  <link rel="alternate" hreflang="en" href="https://lunote-code.github.io/" />
+  <link rel="alternate" hreflang="zh-Hans" href="https://lunote-code.github.io/zh/" />
+  <link rel="alternate" hreflang="x-default" href="https://lunote-code.github.io/" />
+  <link rel="icon" href="/assets/favicon.svg" type="image/svg+xml" />
+  <link rel="alternate" type="application/rss+xml" title="Lunote Blog" href="https://lunote-code.github.io/feed.xml" />
 
-  <!-- Open Graph -->
-  <meta property="og:title" content="Lunote - Plugin-Driven Workspace" />
-  <meta property="og:description" content="Turn notes into a customizable thinking system." />
-  <meta property="og:image" content="https://github.com/lunote-code/lunote/blob/main/docs/assets/screenshots/head-view.png?raw=true" />
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="Lunote" />
+  <meta property="og:locale" content="en_US" />
+  <meta property="og:url" content="https://lunote-code.github.io/" />
+  <meta property="og:title" content="Lunote — Local Markdown Notes with Wiki Links" />
+  <meta property="og:description" content="Typora-style writing + Obsidian-style linking in one desktop app. Your notes stay as plain .md files on disk." />
+  <meta property="og:image" content="https://raw.githubusercontent.com/lunote-code/lunote/main/docs/assets/screenshots/head-view.png" />
 
-  <style>
-    :root {
-      --bg: #ffffff;
-      --text: #111111;
-      --muted: #666666;
-      --card: #f7f7f7;
-      --border: #eaeaea;
-      --btn: #000000;
-      --btnText: #ffffff;
-    }
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Lunote — Local Markdown Notes with Wiki Links" />
+  <meta name="twitter:description" content="Open any folder of .md files. Built-in wiki links, graph, and export—works offline." />
+  <meta name="twitter:image" content="https://raw.githubusercontent.com/lunote-code/lunote/main/docs/assets/screenshots/head-view.png" />
 
-    [data-theme="dark"] {
-      --bg: #0f0f0f;
-      --text: #ffffff;
-      --muted: #b5b5b5;
-      --card: #1a1a1a;
-      --border: #2a2a2a;
-      --btn: #ffffff;
-      --btnText: #000000;
-    }
-
-    body {
-      margin: 0;
-      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial;
-      background: var(--bg);
-      color: var(--text);
-      line-height: 1.6;
-      transition: 0.3s ease;
-    }
-
-    .container {
-      max-width: 900px;
-      margin: 0 auto;
-      padding: 80px 20px;
-      text-align: center;
-    }
-
-    /* 🌙 Theme toggle */
-    .theme-toggle {
-      position: fixed;
-      top: 20px;
-      right: 20px;
-      padding: 8px 12px;
-      border: 1px solid var(--border);
-      border-radius: 8px;
-      cursor: pointer;
-      background: var(--card);
-      color: var(--text);
-      font-size: 14px;
-      user-select: none;
-    }
-
-    h1 {
-      font-size: 52px;
-      margin-bottom: 10px;
-      letter-spacing: -0.5px;
-    }
-
-    .subtitle {
-      font-size: 20px;
-      color: var(--muted);
-      max-width: 720px;
-      margin: 0 auto 30px;
-    }
-
-    .cta-group {
-      margin-top: 20px;
-    }
-
-    .btn {
-      display: inline-block;
-      margin: 8px;
-      padding: 12px 18px;
-      border-radius: 10px;
-      text-decoration: none;
-      font-weight: 600;
-      transition: 0.2s;
-    }
-
-    .primary {
-      background: var(--btn);
-      color: var(--btnText);
-    }
-
-    .secondary {
-      border: 1px solid var(--text);
-      color: var(--text);
-    }
-
-    img {
-      width: 100%;
-      margin-top: 40px;
-      border-radius: 12px;
-      border: 1px solid var(--border);
-    }
-
-    section {
-      margin-top: 80px;
-      text-align: center;
-    }
-
-    h2 {
-      font-size: 28px;
-      margin-bottom: 16px;
-    }
-
-    p {
-      max-width: 760px;
-      margin: 0 auto;
-      color: var(--muted);
-    }
-
-    .grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-      gap: 16px;
-      margin-top: 30px;
-    }
-
-    .card {
-      border: 1px solid var(--border);
-      border-radius: 12px;
-      padding: 18px;
-      text-align: left;
-      background: var(--card);
-    }
-
-    .card strong {
-      display: block;
-      margin-bottom: 6px;
-    }
-
-    .footer {
-      margin-top: 80px;
-      font-size: 13px;
-      color: var(--muted);
-      text-align: center;
-    }
-
-    @media (max-width: 768px) {
-      h1 { font-size: 36px; }
-      .subtitle { font-size: 18px; }
-    }
-
-  </style>
-</head>
-
-<body>
-
-<!-- 🌙 Theme Toggle -->
-<div class="theme-toggle" onclick="toggleTheme()">
-  🌙 / ☀️
-</div>
-
-<div class="container">
-
-  <!-- HERO -->
-  <h1>Lunote</h1>
-
-  <div class="subtitle">
-    Plugin-driven workspace for notes, thinking, and building your own productivity system.
-  </div>
-
-  <div class="cta-group">
-    <a class="btn primary" href="https://github.com/lunote-code/lunote/releases">
-      🚀 Download
-    </a>
-    <a class="btn secondary" href="https://github.com/lunote-code/lunote">
-      View on GitHub
-    </a>
-  </div>
-
-  <!-- IMAGE -->
-  <img
-    src="https://github.com/lunote-code/lunote/blob/main/docs/assets/screenshots/head-view.png?raw=true"
-    alt="Lunote workspace interface"
-  />
-
-  <!-- VALUE -->
-  <section>
-    <h2>Turn notes into a system</h2>
-    <p>
-      Lunote is a lightweight plugin-driven workspace designed for developers, writers,
-      and thinkers who want to build a personalized knowledge system instead of using rigid tools.
-    </p>
-  </section>
-
-  <!-- USE CASE -->
-  <section>
-    <h2>Built for real workflows</h2>
-
-    <div class="grid">
-      <div class="card">
-        <strong>Second Brain</strong>
-        Build your personal knowledge system.
-      </div>
-
-      <div class="card">
-        <strong>Developer Notes</strong>
-        Organize technical knowledge clearly.
-      </div>
-
-      <div class="card">
-        <strong>Writing System</strong>
-        Structure ideas into reusable blocks.
-      </div>
-
-      <div class="card">
-        <strong>Custom Workflows</strong>
-        Extend with plugins when needed.
-      </div>
-    </div>
-  </section>
-
-  <!-- DIFFERENTIATION -->
-  <section>
-    <h2>Why Lunote</h2>
-    <p>
-      Unlike traditional note apps, Lunote is built around a plugin-driven architecture.
-      It adapts to your workflow instead of forcing you into a fixed system.
-    </p>
-  </section>
-
-  <!-- CTA -->
-  <section>
-    <h2>Start building your workspace</h2>
-    <p>Download Lunote and design your own thinking system.</p>
-
-    <div class="cta-group">
-      <a class="btn primary" href="https://github.com/lunote-code/lunote/releases">
-        🚀 Get Lunote
-      </a>
-    </div>
-  </section>
-
-  <div class="footer">
-    © Lunote · Plugin-driven workspace for thinking & productivity
-  </div>
-
-</div>
-
-<!-- 🌙 Theme Script -->
-<script>
-  function toggleTheme() {
-    const root = document.documentElement;
-    const current = root.getAttribute("data-theme");
-
-    if (current === "dark") {
-      root.removeAttribute("data-theme");
-      localStorage.setItem("theme", "light");
-    } else {
-      root.setAttribute("data-theme", "dark");
-      localStorage.setItem("theme", "dark");
-    }
+  <link rel="stylesheet" href="/assets/site.css" />
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "WebSite",
+        "name": "Lunote",
+        "url": "https://lunote-code.github.io/",
+        "description": "Local-first Markdown notes with wiki links and knowledge graph."
+      },
+      {
+        "@type": "SoftwareApplication",
+        "name": "Lunote",
+        "applicationCategory": "ProductivityApplication",
+        "operatingSystem": "macOS, Windows, Linux",
+        "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
+        "downloadUrl": "https://github.com/lunote-code/lunote/releases",
+        "softwareHelp": "https://github.com/lunote-code/lunote/tree/main/docs/guide"
+      }
+    ]
   }
+  </script>
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
 
-  // init theme
-  (function () {
-    const saved = localStorage.getItem("theme");
-    if (saved === "dark") {
-      document.documentElement.setAttribute("data-theme", "dark");
-    }
-  })();
-</script>
+  <header class="site-header">
+    <div class="site-header-inner">
+      <input type="checkbox" id="nav-toggle" class="nav-switch" aria-hidden="true" tabindex="-1" />
+      <a class="brand" href="/">
+        <img src="/assets/favicon.svg" width="28" height="28" alt="" />
+        Lunote
+      </a>
+      <nav class="site-nav" aria-label="Primary">
+        <a href="/" aria-current="page">Home</a>
+        <a href="/#themes">Themes</a>
+        <a href="/blog/">Blog</a>
+        <a href="https://github.com/lunote-code/lunote">GitHub</a>
+        <a class="btn btn-primary nav-download" href="https://github.com/lunote-code/lunote/releases">Download</a>
+      </nav>
+      <div class="header-actions">
+        <div class="lang-menu">
+          <button type="button" class="lang-toggle" aria-haspopup="listbox" aria-expanded="false" aria-label="Select language" title="Select language">
+            <svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 2a14.5 14.5 0 0 0 0 20 14.5 14.5 0 0 0 0-20"/><path d="M2 12h20"/></svg>
+          </button>
+          <ul class="lang-dropdown" role="listbox" aria-label="Language" hidden></ul>
+        </div>
+        <input type="checkbox" id="theme-dark" class="theme-switch" aria-label="Dark mode" tabindex="-1" />
+        <label for="theme-dark" class="theme-toggle" title="Toggle dark mode">
+          <svg class="icon-moon" viewBox="0 0 24 24" aria-hidden="true"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+          <svg class="icon-sun" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"/></svg>
+        </label>
+        <a class="btn btn-primary header-download" href="https://github.com/lunote-code/lunote/releases">Download</a>
+      </div>
+      <label for="nav-toggle" class="nav-menu-btn" aria-label="Open menu">
+        <svg class="nav-icon-open" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
+        <svg class="nav-icon-close" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 6l12 12M18 6 6 18"/></svg>
+      </label>
+    </div>
+  </header>
 
+  <main id="main" class="page">
+    <section class="hero">
+      <span class="hero-badge">Local-first · Open source</span>
+      <h1>Write in Markdown.<br />Connect ideas with wiki links.</h1>
+      <p class="hero-lead">
+        Lunote combines comfortable visual editing with built-in [[wiki links]], backlinks, and a knowledge graph.
+        Open any folder of <code>.md</code> files—no import, no account, works offline.
+      </p>
+      <div class="hero-cta">
+        <a class="btn btn-primary" href="https://github.com/lunote-code/lunote/releases">Download Lunote</a>
+        <a class="btn btn-secondary" href="https://github.com/lunote-code/lunote">View source</a>
+        <a class="btn btn-secondary" href="/blog/">Read the blog</a>
+      </div>
+      <div class="hero-carousel hero-shot">
+        <div class="carousel-viewport">
+          <figure class="carousel-slide">
+            <img
+              src="https://raw.githubusercontent.com/lunote-code/lunote/main/docs/assets/screenshots/head-view.png"
+              width="900"
+              height="506"
+              alt="Lunote welcome screen — open a notes folder or create a draft"
+              loading="eager"
+            />
+            <figcaption>Get started — open any folder of Markdown notes</figcaption>
+          </figure>
+          <figure class="carousel-slide">
+            <img
+              src="https://raw.githubusercontent.com/lunote-code/lunote/main/docs/assets/screenshots/code-view.png"
+              width="900"
+              height="506"
+              alt="Lunote visual editor with code blocks, Mermaid diagrams, and formatted Markdown"
+              loading="lazy"
+            />
+            <figcaption>Visual mode — code blocks, Mermaid, and rich formatting</figcaption>
+          </figure>
+          <figure class="carousel-slide">
+            <img
+              src="https://raw.githubusercontent.com/lunote-code/lunote/main/docs/assets/screenshots/source-view.png"
+              width="900"
+              height="506"
+              alt="Lunote source view showing raw Markdown in focus mode"
+              loading="lazy"
+            />
+            <figcaption>Source mode — raw Markdown with focus writing</figcaption>
+          </figure>
+        </div>
+        <div class="carousel-controls">
+          <label for="hero-slide-3" class="carousel-btn carousel-prev show-on-slide-1" aria-label="Previous screenshot">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="m15 18-6-6 6-6"/></svg>
+          </label>
+          <label for="hero-slide-1" class="carousel-btn carousel-prev show-on-slide-2" aria-label="Previous screenshot">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="m15 18-6-6 6-6"/></svg>
+          </label>
+          <label for="hero-slide-2" class="carousel-btn carousel-prev show-on-slide-3" aria-label="Previous screenshot">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="m15 18-6-6 6-6"/></svg>
+          </label>
+          <div class="carousel-dots">
+            <label for="hero-slide-1" class="carousel-dot" aria-label="Welcome"></label>
+            <label for="hero-slide-2" class="carousel-dot" aria-label="Visual mode"></label>
+            <label for="hero-slide-3" class="carousel-dot" aria-label="Source mode"></label>
+          </div>
+          <label for="hero-slide-2" class="carousel-btn carousel-next show-on-slide-1" aria-label="Next screenshot">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="m9 18 6-6-6-6"/></svg>
+          </label>
+          <label for="hero-slide-3" class="carousel-btn carousel-next show-on-slide-2" aria-label="Next screenshot">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="m9 18 6-6-6-6"/></svg>
+          </label>
+          <label for="hero-slide-1" class="carousel-btn carousel-next show-on-slide-3" aria-label="Next screenshot">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="m9 18 6-6-6-6"/></svg>
+          </label>
+          <input type="radio" name="hero-slide" id="hero-slide-1" class="carousel-radio" checked="checked" tabindex="-1" aria-hidden="true" />
+          <input type="radio" name="hero-slide" id="hero-slide-2" class="carousel-radio" tabindex="-1" aria-hidden="true" />
+          <input type="radio" name="hero-slide" id="hero-slide-3" class="carousel-radio" tabindex="-1" aria-hidden="true" />
+        </div>
+      </div>
+    </section>
+
+    <section class="section section-features" aria-labelledby="features-heading">
+      <div class="section-head">
+        <h2 id="features-heading">Everything you need—built in</h2>
+        <p class="section-intro">
+          Writing, linking, export, and cross-platform support work out of the box—no plugin maze to get started.
+        </p>
+      </div>
+      <div class="feature-grid">
+        <article class="feature-card">
+          <div class="feature-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24"><path d="M12 20h9"/><path d="M16.5 3.5a2.1 2.1 0 0 1 3 3L7 19l-4 1 1-4Z"/></svg>
+          </div>
+          <span class="feature-card-label">Writing</span>
+          <h3>Typora-style editing</h3>
+          <p>Visual and source modes, slash menu, tables, math, Mermaid, callouts, and focus mode.</p>
+        </article>
+        <article class="feature-card">
+          <div class="feature-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/></svg>
+          </div>
+          <span class="feature-card-label">Linking</span>
+          <h3>Obsidian-style graph</h3>
+          <p><code>[[Wiki links]]</code>, backlinks, local graph, tags, and YAML frontmatter on plain files.</p>
+        </article>
+        <article class="feature-card">
+          <div class="feature-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+          </div>
+          <span class="feature-card-label">Export</span>
+          <h3>Share when ready</h3>
+          <p>PDF, Word (DOCX), HTML, and PNG for sharing or archiving outside your vault.</p>
+        </article>
+        <article class="feature-card">
+          <div class="feature-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24"><rect x="2" y="3" width="20" height="14" rx="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>
+          </div>
+          <span class="feature-card-label">Platform</span>
+          <h3>Desktop, everywhere</h3>
+          <p>Native app for macOS, Windows, and Linux. UI available in 11 languages.</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="section section-themes" id="themes" aria-labelledby="themes-heading">
+      <div class="section-head">
+        <h2 id="themes-heading">Make it yours with themes</h2>
+        <p class="section-intro">
+          Six built-in presets, a Theme folder for custom CSS and JSON tokens, and an optional community catalog—no plugins required for writing or linking.
+        </p>
+      </div>
+
+      <div class="theme-grid">
+        <article class="theme-card">
+          <span class="theme-card-label">Built-in</span>
+          <h3>Light &amp; dark presets</h3>
+          <p>GitHub, IDEA, and Dim—each in light and dark. Switch from the <strong>Theme</strong> menu or Preferences.</p>
+        </article>
+        <article class="theme-card">
+          <span class="theme-card-label">Theme folder</span>
+          <h3>Your files, your look</h3>
+          <p>Drop CSS, snippets, and JSON tokens into <code>~/.luna/theme/</code>. Rescan to pick them up instantly.</p>
+        </article>
+        <article class="theme-card">
+          <span class="theme-card-label">Catalog</span>
+          <h3>Community packs</h3>
+          <p>Browse and install theme packs from <strong>Preferences → Plugins</strong> when you want a ready-made style.</p>
+        </article>
+      </div>
+
+      <figure class="theme-shot media-shot">
+        <img
+          src="https://raw.githubusercontent.com/lunote-code/lunote/main/docs/assets/screenshots/theme.png"
+          width="900"
+          height="506"
+          alt="Lunote Preferences showing built-in themes, external CSS, and UI snippets"
+          loading="lazy"
+        />
+        <figcaption>Preferences → Appearance: built-in themes, external CSS, and stackable UI snippets.</figcaption>
+      </figure>
+
+      <div class="theme-actions">
+        <a class="btn btn-primary" href="https://github.com/lunote-code/lunote/tree/main/docs/guide/themes.md">Theme guide</a>
+        <a class="btn btn-secondary" href="https://github.com/lunote-code/lunote-theme">Theme catalog</a>
+      </div>
+    </section>
+
+    <section class="section" aria-labelledby="compare-heading">
+      <h2 id="compare-heading">How it compares</h2>
+      <p class="section-intro">Already on Typora or Obsidian? Lunote is for people who want both in one app.</p>
+      <div class="compare-table-wrap">
+        <table class="compare-table">
+          <thead>
+            <tr><th></th><th>Typora</th><th>Obsidian</th><th>Lunote</th></tr>
+          </thead>
+          <tbody>
+            <tr><td>Writing experience</td><td>Excellent</td><td>Good</td><td>Excellent, built-in</td></tr>
+            <tr><td>Wiki links &amp; graph</td><td>Limited</td><td>Strong (often via plugins)</td><td>Strong, built-in</td></tr>
+            <tr><td>Plugins to get started</td><td>Few</td><td>Many</td><td>Optional (themes)</td></tr>
+            <tr><td>Your files</td><td>Plain .md</td><td>Plain .md</td><td>Plain .md</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <section class="section" aria-labelledby="blog-heading">
+      <h2 id="blog-heading">From the blog</h2>
+      <p class="section-intro">Ideas on local-first notes, knowledge systems, and developer workflows.</p>
+      <div class="post-list">
+        <a class="post-card" href="/blog/knowledge-system-vs-notes/">
+          <div class="post-meta"><time datetime="2026-03-08">Mar 8, 2026</time><span>6 min read</span><span class="post-tag">PKM</span></div>
+          <h2>Why developers need a knowledge system—not just notes</h2>
+          <p>Scattered notes capture facts; a system captures relationships, context, and reusable thinking patterns.</p>
+        </a>
+        <a class="post-card" href="/blog/local-first-productivity/">
+          <div class="post-meta"><time datetime="2026-04-02">Apr 2, 2026</time><span>5 min read</span><span class="post-tag">Local-first</span></div>
+          <h2>Local-first apps and the future of productivity tools</h2>
+          <p>Why offline-capable, file-based tools are winning back trust from cloud-only note platforms.</p>
+        </a>
+      </div>
+      <p style="text-align:center;margin-top:24px;"><a href="/blog/">View all articles →</a></p>
+    </section>
+
+    <section class="section article-cta" aria-labelledby="cta-heading">
+      <h2 id="cta-heading">Start with the folder you already have</h2>
+      <p>Open an Obsidian, Typora, or Logseq vault—or any directory of Markdown files.</p>
+      <a class="btn btn-primary" href="https://github.com/lunote-code/lunote/releases">Get Lunote free</a>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <nav aria-label="Footer">
+      <a href="/">Home</a>
+      <a href="/#themes">Themes</a>
+      <a href="/blog/">Blog</a>
+      <a href="https://github.com/lunote-code/lunote/releases">Download</a>
+      <a href="https://github.com/lunote-code/lunote">GitHub</a>
+      <a href="/feed.xml">RSS</a>
+    </nav>
+    <p>© Lunote · Local Markdown notes with wiki links</p>
+  </footer>
+  <script src="/assets/theme.js" defer></script>
+  <script src="/assets/carousel.js" defer></script>
 </body>
 </html>

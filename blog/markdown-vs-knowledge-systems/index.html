@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <script>
+    try {
+      if (localStorage.getItem('lunote-theme') === 'dark') {
+        document.documentElement.dataset.theme = 'dark';
+      }
+    } catch (e) {}
+  </script>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Markdown Files vs Knowledge Systems | Lunote Blog</title>
+  <meta name="description" content="Plain Markdown is the right foundation for developer notes—but folders alone are not a graph. What wiki links and backlinks add on top of .md files." />
+  <link rel="canonical" href="https://lunote-code.github.io/blog/markdown-vs-knowledge-systems/" />
+  <link rel="alternate" hreflang="en" href="https://lunote-code.github.io/blog/markdown-vs-knowledge-systems/" />
+  <link rel="alternate" hreflang="zh-Hans" href="https://lunote-code.github.io/zh/blog/markdown-vs-knowledge-systems/" />
+  <link rel="alternate" hreflang="x-default" href="https://lunote-code.github.io/blog/markdown-vs-knowledge-systems/" />
+  <link rel="icon" href="/assets/favicon.svg" type="image/svg+xml" />
+  <meta property="og:type" content="article" />
+  <meta property="og:site_name" content="Lunote" />
+  <meta property="og:locale" content="en_US" />
+  <meta property="og:url" content="https://lunote-code.github.io/blog/markdown-vs-knowledge-systems/" />
+  <meta property="og:title" content="Markdown files vs knowledge systems for developers" />
+  <meta property="og:description" content="Plain Markdown is the right foundation—but folders alone are not a graph. What wiki links and backlinks add on top of .md files." />
+  <meta property="og:image" content="https://raw.githubusercontent.com/lunote-code/lunote/main/docs/assets/screenshots/source-view.png" />
+  <meta property="article:published_time" content="2026-06-01" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Markdown files vs knowledge systems for developers" />
+  <meta name="twitter:description" content="Plain Markdown is the right foundation—but folders alone are not a graph. What wiki links and backlinks add on top of .md files." />
+  <meta name="twitter:image" content="https://raw.githubusercontent.com/lunote-code/lunote/main/docs/assets/screenshots/source-view.png" />
+  <link rel="stylesheet" href="/assets/site.css" />
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BlogPosting",
+    "headline": "Markdown files vs knowledge systems for developers",
+    "description": "Plain Markdown is the right foundation for developer notes—but folders alone are not a graph. What wiki links and backlinks add on top of .md files.",
+    "datePublished": "2026-06-01",
+    "author": { "@type": "Organization", "name": "Lunote" },
+    "publisher": { "@type": "Organization", "name": "Lunote", "url": "https://lunote-code.github.io/" },
+    "mainEntityOfPage": "https://lunote-code.github.io/blog/markdown-vs-knowledge-systems/",
+    "image": "https://raw.githubusercontent.com/lunote-code/lunote/main/docs/assets/screenshots/source-view.png"
+  }
+  </script>
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+  <header class="site-header">
+    <div class="site-header-inner">
+      <input type="checkbox" id="nav-toggle" class="nav-switch" aria-hidden="true" tabindex="-1" />
+      <a class="brand" href="/"><img src="/assets/favicon.svg" width="28" height="28" alt="" /> Lunote</a>
+      <nav class="site-nav" aria-label="Primary">
+        <a href="/">Home</a>
+        <a href="/#themes">Themes</a>
+        <a href="/blog/" aria-current="page">Blog</a>
+        <a href="https://github.com/lunote-code/lunote">GitHub</a>
+        <a class="btn btn-primary nav-download" href="https://github.com/lunote-code/lunote/releases">Download</a>
+      </nav>
+      <div class="header-actions">
+        <div class="lang-menu">
+          <button type="button" class="lang-toggle" aria-haspopup="listbox" aria-expanded="false" aria-label="Select language" title="Select language">
+            <svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 2a14.5 14.5 0 0 0 0 20 14.5 14.5 0 0 0 0-20"/><path d="M2 12h20"/></svg>
+          </button>
+          <ul class="lang-dropdown" role="listbox" aria-label="Language" hidden></ul>
+        </div>
+        <input type="checkbox" id="theme-dark" class="theme-switch" aria-label="Dark mode" tabindex="-1" />
+        <label for="theme-dark" class="theme-toggle" title="Toggle dark mode">
+          <svg class="icon-moon" viewBox="0 0 24 24" aria-hidden="true"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+          <svg class="icon-sun" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"/></svg>
+        </label>
+        <a class="btn btn-primary header-download" href="https://github.com/lunote-code/lunote/releases">Download</a>
+      </div>
+      <label for="nav-toggle" class="nav-menu-btn" aria-label="Open menu">
+        <svg class="nav-icon-open" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
+        <svg class="nav-icon-close" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 6l12 12M18 6 6 18"/></svg>
+      </label>
+    </div>
+  </header>
+  <main id="main" class="page">
+    <nav class="breadcrumb"><a href="/">Home</a> / <a href="/blog/">Blog</a> / Markdown vs knowledge systems</nav>
+    <article>
+      <header class="article-header">
+        <div class="post-meta"><time datetime="2026-06-01">June 1, 2026</time><span>6 min read</span><span class="post-tag">Markdown</span></div>
+        <h1>Markdown files vs knowledge systems for developers</h1>
+        <p class="article-intro">
+          Markdown won because it is readable forever: diff-friendly, grep-friendly, tool-agnostic.
+          The next layer is not a proprietary database—it is lightweight linking on top of the same files.
+        </p>
+      </header>
+      <div class="article-body">
+        <h2>Folders are a weak ontology</h2>
+        <p>
+          Putting a note in <code>backend/redis/</code> forces one primary category.
+          Real topics span layers: caching touches auth, billing, and ops. Wiki links express many-to-many relationships without copying content.
+        </p>
+        <h2>What stays in the file</h2>
+        <ul>
+          <li>Body text, code fences, and images—standard Markdown.</li>
+          <li>Optional YAML frontmatter for tags, status, or dates.</li>
+          <li><code>[[Wiki links]]</code> and embeds like <code>![[Related note]]</code> where supported.</li>
+        </ul>
+        <h2>What the app adds at read time</h2>
+        <ul>
+          <li>Backlink index — who points here?</li>
+          <li>Graph — what cluster does this note belong to?</li>
+          <li>Search across titles, bodies, and tags.</li>
+          <li>Rename propagation — update link targets when a note moves.</li>
+        </ul>
+        <h2>Choosing a Markdown-native app</h2>
+        <p>
+          Avoid lock-in: if you cannot open the folder in another editor tomorrow, you are renting your vault.
+          Lunote, like Typora and Obsidian, treats the directory as the vault—but emphasizes comfortable writing and built-in linking
+          without requiring a plugin stack to get a graph or export to PDF and Word.
+        </p>
+        <blockquote>
+          The best knowledge system is the one whose files you would still want if the app disappeared tomorrow.
+        </blockquote>
+      </div>
+      <aside class="article-cta">
+        <h2>Markdown files + wiki links in one app</h2>
+        <p>Open your vault in Lunote—Typora-style editing with Obsidian-style linking.</p>
+        <a class="btn btn-primary" href="https://github.com/lunote-code/lunote/releases">Try Lunote</a>
+      </aside>
+    </article>
+  </main>
+  <footer class="site-footer"><nav aria-label="Footer"><a href="/">Home</a><a href="/#themes">Themes</a><a href="/blog/">Blog</a></nav><p>© Lunote</p></footer>
+  <script src="/assets/theme.js" defer></script>
+</body>
+</html>

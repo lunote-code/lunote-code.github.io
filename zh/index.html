@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+<html lang="zh-Hans">
+<head>
+  <meta charset="UTF-8" />
+  <script>
+    try {
+      if (localStorage.getItem('lunote-theme') === 'dark') {
+        document.documentElement.dataset.theme = 'dark';
+      }
+    } catch (e) {}
+  </script>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Lunote — 本地 Markdown 笔记，双链与知识图谱</title>
+  <meta name="description" content="Lunote 是一款免费、本地优先的 Markdown 笔记应用，支持 macOS、Windows 和 Linux。流畅写作，用 [[双链]] 串联笔记，查看反向链接与知识图谱——无需账号。" />
+  <meta name="keywords" content="Lunote, Markdown 笔记, 双链, 知识图谱, Obsidian 替代, Typora 替代, 本地优先, PKM, 第二大脑" />
+  <link rel="canonical" href="https://lunote-code.github.io/zh/" />
+  <link rel="alternate" hreflang="en" href="https://lunote-code.github.io/" />
+  <link rel="alternate" hreflang="zh-Hans" href="https://lunote-code.github.io/zh/" />
+  <link rel="alternate" hreflang="x-default" href="https://lunote-code.github.io/" />
+  <link rel="icon" href="/assets/favicon.svg" type="image/svg+xml" />
+  <link rel="alternate" type="application/rss+xml" title="Lunote Blog" href="https://lunote-code.github.io/feed.xml" />
+
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="Lunote" />
+  <meta property="og:locale" content="zh_CN" />
+  <meta property="og:url" content="https://lunote-code.github.io/zh/" />
+  <meta property="og:title" content="Lunote — 本地 Markdown 笔记与双链" />
+  <meta property="og:description" content="Typora 式写作 + Obsidian 式双链，合于一款桌面应用。笔记始终是磁盘上的 .md 文件。" />
+  <meta property="og:image" content="https://raw.githubusercontent.com/lunote-code/lunote/main/docs/assets/screenshots/head-view.png" />
+
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Lunote — 本地 Markdown 笔记与双链" />
+  <meta name="twitter:description" content="打开任意 .md 文件夹即可使用。内建双链、知识图谱与导出——完全离线。" />
+  <meta name="twitter:image" content="https://raw.githubusercontent.com/lunote-code/lunote/main/docs/assets/screenshots/head-view.png" />
+
+  <link rel="stylesheet" href="/assets/site.css" />
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "WebSite",
+        "name": "Lunote",
+        "url": "https://lunote-code.github.io/zh/",
+        "inLanguage": "zh-Hans",
+        "description": "本地优先的 Markdown 笔记，支持双链与知识图谱。"
+      },
+      {
+        "@type": "SoftwareApplication",
+        "name": "Lunote",
+        "applicationCategory": "ProductivityApplication",
+        "operatingSystem": "macOS, Windows, Linux",
+        "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
+        "downloadUrl": "https://github.com/lunote-code/lunote/releases",
+        "softwareHelp": "https://github.com/lunote-code/lunote/tree/main/docs/guide"
+      }
+    ]
+  }
+  </script>
+</head>
+<body>
+  <a class="skip-link" href="#main">跳转到正文</a>
+
+  <header class="site-header">
+    <div class="site-header-inner">
+      <input type="checkbox" id="nav-toggle" class="nav-switch" aria-hidden="true" tabindex="-1" />
+      <a class="brand" href="/zh/">
+        <img src="/assets/favicon.svg" width="28" height="28" alt="" />
+        Lunote
+      </a>
+      <nav class="site-nav" aria-label="主导航">
+        <a href="/zh/" aria-current="page">首页</a>
+        <a href="/zh/#themes">主题</a>
+        <a href="/zh/blog/">博客</a>
+        <a href="https://github.com/lunote-code/lunote">GitHub</a>
+        <a class="btn btn-primary nav-download" href="https://github.com/lunote-code/lunote/releases">下载</a>
+      </nav>
+      <div class="header-actions">
+        <div class="lang-menu">
+          <button type="button" class="lang-toggle" aria-haspopup="listbox" aria-expanded="false" aria-label="选择语言" title="选择语言">
+            <svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 2a14.5 14.5 0 0 0 0 20 14.5 14.5 0 0 0 0-20"/><path d="M2 12h20"/></svg>
+          </button>
+          <ul class="lang-dropdown" role="listbox" aria-label="语言" hidden></ul>
+        </div>
+        <input type="checkbox" id="theme-dark" class="theme-switch" aria-label="深色模式" tabindex="-1" />
+        <label for="theme-dark" class="theme-toggle" title="切换深色模式">
+          <svg class="icon-moon" viewBox="0 0 24 24" aria-hidden="true"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+          <svg class="icon-sun" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"/></svg>
+        </label>
+        <a class="btn btn-primary header-download" href="https://github.com/lunote-code/lunote/releases">下载</a>
+      </div>
+      <label for="nav-toggle" class="nav-menu-btn" aria-label="打开菜单">
+        <svg class="nav-icon-open" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
+        <svg class="nav-icon-close" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 6l12 12M18 6 6 18"/></svg>
+      </label>
+    </div>
+  </header>
+
+  <main id="main" class="page">
+    <section class="hero">
+      <span class="hero-badge">本地优先 · 开源</span>
+      <h1>打开 Markdown 文件夹就能用<br />写作、双链、知识图谱</h1>
+      <p class="hero-lead">
+        Lunote 将流畅的可视化编辑与内建的 [[双链]]、反向链接、知识图谱融为一体。
+        打开任意 <code>.md</code> 文件夹即可上手——无需导入、无需账号、可完全离线。
+      </p>
+      <div class="hero-cta">
+        <a class="btn btn-primary" href="https://github.com/lunote-code/lunote/releases">下载 Lunote</a>
+        <a class="btn btn-secondary" href="https://github.com/lunote-code/lunote">查看源码</a>
+        <a class="btn btn-secondary" href="/zh/blog/">阅读博客</a>
+      </div>
+      <div class="hero-carousel hero-shot">
+        <div class="carousel-viewport">
+          <figure class="carousel-slide">
+            <img
+              src="https://raw.githubusercontent.com/lunote-code/lunote/main/docs/assets/screenshots/head-view.png"
+              width="900"
+              height="506"
+              alt="Lunote 欢迎界面 — 打开笔记文件夹或新建草稿"
+              loading="eager"
+            />
+            <figcaption>上手即用 — 打开任意 Markdown 笔记文件夹</figcaption>
+          </figure>
+          <figure class="carousel-slide">
+            <img
+              src="https://raw.githubusercontent.com/lunote-code/lunote/main/docs/assets/screenshots/code-view.png"
+              width="900"
+              height="506"
+              alt="Lunote 可视化模式 — 代码块、Mermaid 图表与排版后的 Markdown"
+              loading="lazy"
+            />
+            <figcaption>可视化模式 — 代码块、Mermaid 与丰富排版</figcaption>
+          </figure>
+          <figure class="carousel-slide">
+            <img
+              src="https://raw.githubusercontent.com/lunote-code/lunote/main/docs/assets/screenshots/source-view.png"
+              width="900"
+              height="506"
+              alt="Lunote 源码模式 — 专注写作下的 Markdown 源码"
+              loading="lazy"
+            />
+            <figcaption>源码模式 — Markdown 源码，专注写作</figcaption>
+          </figure>
+        </div>
+        <div class="carousel-controls">
+          <label for="hero-slide-3" class="carousel-btn carousel-prev show-on-slide-1" aria-label="上一张截图">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="m15 18-6-6 6-6"/></svg>
+          </label>
+          <label for="hero-slide-1" class="carousel-btn carousel-prev show-on-slide-2" aria-label="上一张截图">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="m15 18-6-6 6-6"/></svg>
+          </label>
+          <label for="hero-slide-2" class="carousel-btn carousel-prev show-on-slide-3" aria-label="上一张截图">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="m15 18-6-6 6-6"/></svg>
+          </label>
+          <div class="carousel-dots">
+            <label for="hero-slide-1" class="carousel-dot" aria-label="欢迎页"></label>
+            <label for="hero-slide-2" class="carousel-dot" aria-label="可视化模式"></label>
+            <label for="hero-slide-3" class="carousel-dot" aria-label="源码模式"></label>
+          </div>
+          <label for="hero-slide-2" class="carousel-btn carousel-next show-on-slide-1" aria-label="下一张截图">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="m9 18 6-6-6-6"/></svg>
+          </label>
+          <label for="hero-slide-3" class="carousel-btn carousel-next show-on-slide-2" aria-label="下一张截图">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="m9 18 6-6-6-6"/></svg>
+          </label>
+          <label for="hero-slide-1" class="carousel-btn carousel-next show-on-slide-3" aria-label="下一张截图">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="m9 18 6-6-6-6"/></svg>
+          </label>
+          <input type="radio" name="hero-slide" id="hero-slide-1" class="carousel-radio" checked="checked" tabindex="-1" aria-hidden="true" />
+          <input type="radio" name="hero-slide" id="hero-slide-2" class="carousel-radio" tabindex="-1" aria-hidden="true" />
+          <input type="radio" name="hero-slide" id="hero-slide-3" class="carousel-radio" tabindex="-1" aria-hidden="true" />
+        </div>
+      </div>
+    </section>
+
+    <section class="section section-features" aria-labelledby="features-heading">
+      <div class="section-head">
+        <h2 id="features-heading">核心能力，开箱即用</h2>
+        <p class="section-intro">
+          写作、双链、导出与跨平台支持全部内建——上手不必先折腾一圈插件。
+        </p>
+      </div>
+      <div class="feature-grid">
+        <article class="feature-card">
+          <div class="feature-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24"><path d="M12 20h9"/><path d="M16.5 3.5a2.1 2.1 0 0 1 3 3L7 19l-4 1 1-4Z"/></svg>
+          </div>
+          <span class="feature-card-label">写作</span>
+          <h3>Typora 式编辑</h3>
+          <p>可视化与源码模式、斜杠菜单、表格、公式、Mermaid、标注框与专注模式。</p>
+        </article>
+        <article class="feature-card">
+          <div class="feature-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/></svg>
+          </div>
+          <span class="feature-card-label">双链</span>
+          <h3>Obsidian 式知识网络</h3>
+          <p><code>[[双链]]</code>、反向链接、局部图谱、标签与 YAML Frontmatter，全部写在纯文本文件里。</p>
+        </article>
+        <article class="feature-card">
+          <div class="feature-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+          </div>
+          <span class="feature-card-label">导出</span>
+          <h3>需要时再导出</h3>
+          <p>支持导出 PDF、Word（DOCX）、HTML、PNG，便于分享或归档。</p>
+        </article>
+        <article class="feature-card">
+          <div class="feature-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24"><rect x="2" y="3" width="20" height="14" rx="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>
+          </div>
+          <span class="feature-card-label">平台</span>
+          <h3>三大桌面平台</h3>
+          <p>macOS、Windows、Linux 原生客户端，界面支持 11 种语言。</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="section section-themes" id="themes" aria-labelledby="themes-heading">
+      <div class="section-head">
+        <h2 id="themes-heading">用主题定制你的界面</h2>
+        <p class="section-intro">
+          六套内置主题、主题文件夹自定义 CSS 与 JSON 样式变量，以及可选的社区主题目录——写作与双链不依赖插件。
+        </p>
+      </div>
+
+      <div class="theme-grid">
+        <article class="theme-card">
+          <span class="theme-card-label">内置</span>
+          <h3>浅色 / 深色主题</h3>
+          <p>GitHub、IDEA、Dim 各提供浅色与深色版本。在<strong>主题</strong>菜单或偏好设置中切换。</p>
+        </article>
+        <article class="theme-card">
+          <span class="theme-card-label">主题文件夹</span>
+          <h3>你的样式，你做主</h3>
+          <p>将 CSS、代码片段与 JSON 样式变量放入 <code>~/.luna/theme/</code>，重新扫描即可生效。</p>
+        </article>
+        <article class="theme-card">
+          <span class="theme-card-label">社区</span>
+          <h3>主题插件包</h3>
+          <p>在<strong>偏好设置 → 插件</strong>中浏览、安装社区主题包，一键换上现成风格。</p>
+        </article>
+      </div>
+
+      <figure class="theme-shot media-shot">
+        <img
+          src="https://raw.githubusercontent.com/lunote-code/lunote/main/docs/assets/screenshots/theme.png"
+          width="900"
+          height="506"
+          alt="Lunote 偏好设置 — 内置主题、外部 CSS 与 UI 代码片段"
+          loading="lazy"
+        />
+        <figcaption>偏好设置 → 外观：内置主题、外部 CSS，以及可叠加的 UI 代码片段。</figcaption>
+      </figure>
+
+      <div class="theme-actions">
+        <a class="btn btn-primary" href="https://github.com/lunote-code/lunote/tree/main/docs/guide/themes.md">主题使用指南</a>
+        <a class="btn btn-secondary" href="https://github.com/lunote-code/lunote-theme">社区主题目录</a>
+      </div>
+    </section>
+
+    <section class="section" aria-labelledby="compare-heading">
+      <h2 id="compare-heading">与其他工具对比</h2>
+      <p class="section-intro">已经在用 Typora 或 Obsidian？Lunote 适合希望「写作体验」和「双链图谱」兼得的用户。</p>
+      <div class="compare-table-wrap">
+        <table class="compare-table">
+          <thead>
+            <tr><th></th><th>Typora</th><th>Obsidian</th><th>Lunote</th></tr>
+          </thead>
+          <tbody>
+            <tr><td>写作体验</td><td>优秀</td><td>良好</td><td>优秀，内建</td></tr>
+            <tr><td>双链与图谱</td><td>较弱</td><td>强（常靠插件）</td><td>强，内建</td></tr>
+            <tr><td>上手要不要装插件</td><td>几乎不用</td><td>往往要装</td><td>可选（主题）</td></tr>
+            <tr><td>笔记格式</td><td>纯 .md</td><td>纯 .md</td><td>纯 .md</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <section class="section" aria-labelledby="blog-heading">
+      <h2 id="blog-heading">博客推荐</h2>
+      <p class="section-intro">关于本地优先笔记、知识系统与开发者工作流的一些思考。</p>
+      <div class="post-list">
+        <a class="post-card" href="/zh/blog/knowledge-system-vs-notes/">
+          <div class="post-meta"><time datetime="2026-03-08">2026年3月8日</time><span>约 6 分钟</span><span class="post-tag">PKM</span></div>
+          <h2>开发者需要的不是笔记堆，而是知识系统</h2>
+          <p>散落的笔记只能记下事实；知识系统还能留下关系、上下文和可复用的思考方式。</p>
+        </a>
+        <a class="post-card" href="/zh/blog/local-first-productivity/">
+          <div class="post-meta"><time datetime="2026-04-02">2026年4月2日</time><span>约 5 分钟</span><span class="post-tag">本地优先</span></div>
+          <h2>本地优先：生产力工具正在往哪走</h2>
+          <p>可离线、基于文件的笔记工具，正在从纯云端平台那里赢回用户的信任。</p>
+        </a>
+      </div>
+      <p style="text-align:center;margin-top:24px;"><a href="/zh/blog/">查看全部文章 →</a></p>
+    </section>
+
+    <section class="section article-cta" aria-labelledby="cta-heading">
+      <h2 id="cta-heading">从你已有的文件夹开始</h2>
+      <p>直接打开 Obsidian、Typora、Logseq 的笔记库，或任意 Markdown 文件夹。</p>
+      <a class="btn btn-primary" href="https://github.com/lunote-code/lunote/releases">免费下载 Lunote</a>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <nav aria-label="页脚">
+      <a href="/zh/">首页</a>
+      <a href="/zh/#themes">主题</a>
+      <a href="/zh/blog/">博客</a>
+      <a href="https://github.com/lunote-code/lunote/releases">下载</a>
+      <a href="https://github.com/lunote-code/lunote">GitHub</a>
+      <a href="/feed.xml">RSS</a>
+    </nav>
+    <p>© Lunote · 本地 Markdown 笔记，双链与知识图谱</p>
+  </footer>
+  <script src="/assets/theme.js" defer></script>
+  <script src="/assets/carousel.js" defer></script>
+</body>
+</html>

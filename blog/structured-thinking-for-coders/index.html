@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <script>
+    try {
+      if (localStorage.getItem('lunote-theme') === 'dark') {
+        document.documentElement.dataset.theme = 'dark';
+      }
+    } catch (e) {}
+  </script>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Structured Thinking for Coding Workflows | Lunote Blog</title>
+  <meta name="description" content="Link design decisions, ADRs, and runbooks in a connected note graph. How structured thinking improves debugging, onboarding, and team memory." />
+  <link rel="canonical" href="https://lunote-code.github.io/blog/structured-thinking-for-coders/" />
+  <link rel="alternate" hreflang="en" href="https://lunote-code.github.io/blog/structured-thinking-for-coders/" />
+  <link rel="alternate" hreflang="zh-Hans" href="https://lunote-code.github.io/zh/blog/structured-thinking-for-coders/" />
+  <link rel="alternate" hreflang="x-default" href="https://lunote-code.github.io/blog/structured-thinking-for-coders/" />
+  <link rel="icon" href="/assets/favicon.svg" type="image/svg+xml" />
+  <meta property="og:type" content="article" />
+  <meta property="og:site_name" content="Lunote" />
+  <meta property="og:locale" content="en_US" />
+  <meta property="og:url" content="https://lunote-code.github.io/blog/structured-thinking-for-coders/" />
+  <meta property="og:title" content="How structured thinking improves coding workflows" />
+  <meta property="og:description" content="Linking design decisions, ADRs, and runbooks turns one-off debugging into durable team memory." />
+  <meta property="og:image" content="https://raw.githubusercontent.com/lunote-code/lunote/main/docs/assets/screenshots/code-view.png" />
+  <meta property="article:published_time" content="2026-05-10" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="How structured thinking improves coding workflows" />
+  <meta name="twitter:description" content="Linking design decisions, ADRs, and runbooks turns one-off debugging into durable team memory." />
+  <meta name="twitter:image" content="https://raw.githubusercontent.com/lunote-code/lunote/main/docs/assets/screenshots/code-view.png" />
+  <link rel="stylesheet" href="/assets/site.css" />
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BlogPosting",
+    "headline": "How structured thinking improves coding workflows",
+    "description": "Link design decisions, ADRs, and runbooks in a connected note graph. How structured thinking improves debugging, onboarding, and team memory.",
+    "datePublished": "2026-05-10",
+    "author": { "@type": "Organization", "name": "Lunote" },
+    "publisher": { "@type": "Organization", "name": "Lunote", "url": "https://lunote-code.github.io/" },
+    "mainEntityOfPage": "https://lunote-code.github.io/blog/structured-thinking-for-coders/",
+    "image": "https://raw.githubusercontent.com/lunote-code/lunote/main/docs/assets/screenshots/code-view.png"
+  }
+  </script>
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+  <header class="site-header">
+    <div class="site-header-inner">
+      <input type="checkbox" id="nav-toggle" class="nav-switch" aria-hidden="true" tabindex="-1" />
+      <a class="brand" href="/"><img src="/assets/favicon.svg" width="28" height="28" alt="" /> Lunote</a>
+      <nav class="site-nav" aria-label="Primary">
+        <a href="/">Home</a>
+        <a href="/#themes">Themes</a>
+        <a href="/blog/" aria-current="page">Blog</a>
+        <a href="https://github.com/lunote-code/lunote">GitHub</a>
+        <a class="btn btn-primary nav-download" href="https://github.com/lunote-code/lunote/releases">Download</a>
+      </nav>
+      <div class="header-actions">
+        <div class="lang-menu">
+          <button type="button" class="lang-toggle" aria-haspopup="listbox" aria-expanded="false" aria-label="Select language" title="Select language">
+            <svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 2a14.5 14.5 0 0 0 0 20 14.5 14.5 0 0 0 0-20"/><path d="M2 12h20"/></svg>
+          </button>
+          <ul class="lang-dropdown" role="listbox" aria-label="Language" hidden></ul>
+        </div>
+        <input type="checkbox" id="theme-dark" class="theme-switch" aria-label="Dark mode" tabindex="-1" />
+        <label for="theme-dark" class="theme-toggle" title="Toggle dark mode">
+          <svg class="icon-moon" viewBox="0 0 24 24" aria-hidden="true"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+          <svg class="icon-sun" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"/></svg>
+        </label>
+        <a class="btn btn-primary header-download" href="https://github.com/lunote-code/lunote/releases">Download</a>
+      </div>
+      <label for="nav-toggle" class="nav-menu-btn" aria-label="Open menu">
+        <svg class="nav-icon-open" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
+        <svg class="nav-icon-close" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 6l12 12M18 6 6 18"/></svg>
+      </label>
+    </div>
+  </header>
+  <main id="main" class="page">
+    <nav class="breadcrumb"><a href="/">Home</a> / <a href="/blog/">Blog</a> / Structured thinking</nav>
+    <article>
+      <header class="article-header">
+        <div class="post-meta"><time datetime="2026-05-10">May 10, 2026</time><span>7 min read</span><span class="post-tag">Workflow</span></div>
+        <h1>How structured thinking improves coding workflows</h1>
+        <p class="article-intro">
+          Unstructured notes help in the moment. Structured thinking helps six months later—when the original author is on vacation and production is red.
+        </p>
+      </header>
+      <div class="article-body">
+        <h2>Structure is not bureaucracy</h2>
+        <p>
+          Structure does not mean heavy templates on every page. It means predictable places for decisions, links from symptoms to causes,
+          and titles that future-you can grep. A one-paragraph ADR linked from <code>[[payment-module]]</code> beats a ten-page doc nobody opens.
+        </p>
+        <h2>Patterns that work in engineering vaults</h2>
+        <ol>
+          <li><strong>Hub notes</strong> — index pages like <code>[[Platform overview]]</code> that link to services and runbooks.</li>
+          <li><strong>Decision records</strong> — short “we chose X because Y” notes with date and status in frontmatter.</li>
+          <li><strong>Incident links</strong> — tie postmortems to the components they touched, not only to Slack threads.</li>
+          <li><strong>Snippet boundaries</strong> — code samples live in notes named after problems, not after filenames alone.</li>
+        </ol>
+        <h2>Tools should reduce friction, not add ceremony</h2>
+        <p>
+          If linking two notes takes more effort than copying a paragraph, structure will not stick.
+          Lunote optimizes for fast writing plus <code>[[wiki links]]</code> autocomplete, backlinks in a knowledge panel,
+          and a graph to see whether your “platform hub” is actually connected—or an orphan.
+        </p>
+        <h2>Measure success by retrieval time</h2>
+        <p>
+          The right metric is not note count. Ask: how long to answer “why does auth behave this way on mobile?”
+          If the answer path is hub → service note → ADR → incident, your system is working.
+        </p>
+      </div>
+      <aside class="article-cta">
+        <h2>Build structure on plain Markdown</h2>
+        <p>Wiki links, backlinks, and outline—built into Lunote for macOS, Windows, and Linux.</p>
+        <a class="btn btn-primary" href="https://github.com/lunote-code/lunote/releases">Download free</a>
+      </aside>
+    </article>
+  </main>
+  <footer class="site-footer"><nav aria-label="Footer"><a href="/">Home</a><a href="/#themes">Themes</a><a href="/blog/">Blog</a></nav><p>© Lunote</p></footer>
+  <script src="/assets/theme.js" defer></script>
+</body>
+</html>

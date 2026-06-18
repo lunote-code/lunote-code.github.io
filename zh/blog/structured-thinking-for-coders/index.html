@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="zh-Hans">
+<head>
+  <meta charset="UTF-8" />
+  <script>try{if(localStorage.getItem('lunote-theme')==='dark')document.documentElement.dataset.theme='dark';}catch(e){}</script>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>结构化思维如何提升编程效率 | Lunote 博客</title>
+  <meta name="description" content="把设计决策、ADR 和运维手册串成互联的笔记网络。结构化思维如何改善排障、新人上手与团队记忆。" />
+  <link rel="canonical" href="https://lunote-code.github.io/zh/blog/structured-thinking-for-coders/" />
+  <link rel="alternate" hreflang="en" href="https://lunote-code.github.io/blog/structured-thinking-for-coders/" />
+  <link rel="alternate" hreflang="zh-Hans" href="https://lunote-code.github.io/zh/blog/structured-thinking-for-coders/" />
+  <link rel="alternate" hreflang="x-default" href="https://lunote-code.github.io/blog/structured-thinking-for-coders/" />
+  <link rel="icon" href="/assets/favicon.svg" type="image/svg+xml" />
+  <meta property="og:type" content="article" />
+  <meta property="og:site_name" content="Lunote" />
+  <meta property="og:locale" content="zh_CN" />
+  <meta property="og:url" content="https://lunote-code.github.io/zh/blog/structured-thinking-for-coders/" />
+  <meta property="og:title" content="结构化思维如何提升编程效率" />
+  <meta property="og:description" content="把设计决策、ADR 和运维手册串起来，一次性的排障经验才能变成团队长期记忆。" />
+  <meta property="og:image" content="https://raw.githubusercontent.com/lunote-code/lunote/main/docs/assets/screenshots/code-view.png" />
+  <meta property="article:published_time" content="2026-05-10" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <link rel="stylesheet" href="/assets/site.css" />
+</head>
+<body>
+  <a class="skip-link" href="#main">跳转到正文</a>
+  <header class="site-header">
+    <div class="site-header-inner">
+      <input type="checkbox" id="nav-toggle" class="nav-switch" aria-hidden="true" tabindex="-1" />
+      <a class="brand" href="/zh/"><img src="/assets/favicon.svg" width="28" height="28" alt="" /> Lunote</a>
+      <nav class="site-nav" aria-label="主导航">
+        <a href="/zh/">首页</a>
+        <a href="/zh/#themes">主题</a>
+        <a href="/zh/blog/" aria-current="page">博客</a>
+        <a href="https://github.com/lunote-code/lunote">GitHub</a>
+        <a class="btn btn-primary nav-download" href="https://github.com/lunote-code/lunote/releases">下载</a>
+      </nav>
+      <div class="header-actions">
+        <div class="lang-menu">
+          <button type="button" class="lang-toggle" aria-haspopup="listbox" aria-expanded="false" aria-label="选择语言" title="选择语言">
+            <svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 2a14.5 14.5 0 0 0 0 20 14.5 14.5 0 0 0 0-20"/><path d="M2 12h20"/></svg>
+          </button>
+          <ul class="lang-dropdown" role="listbox" aria-label="语言" hidden></ul>
+        </div>
+        <input type="checkbox" id="theme-dark" class="theme-switch" aria-label="深色模式" tabindex="-1" />
+        <label for="theme-dark" class="theme-toggle" title="切换深色模式">
+          <svg class="icon-moon" viewBox="0 0 24 24" aria-hidden="true"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+          <svg class="icon-sun" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"/></svg>
+        </label>
+        <a class="btn btn-primary header-download" href="https://github.com/lunote-code/lunote/releases">下载</a>
+      </div>
+      <label for="nav-toggle" class="nav-menu-btn" aria-label="打开菜单">
+        <svg class="nav-icon-open" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
+        <svg class="nav-icon-close" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 6l12 12M18 6 6 18"/></svg>
+      </label>
+    </div>
+  </header>
+  <main id="main" class="page">
+    <nav class="breadcrumb" aria-label="面包屑"><a href="/zh/">首页</a> / <a href="/zh/blog/">博客</a> / 结构化思维</nav>
+    <article>
+      <header class="article-header">
+        <div class="post-meta"><time datetime="2026-05-10">2026年5月10日</time><span>约 7 分钟</span><span class="post-tag">工作流</span></div>
+        <h1>结构化思维如何提升编程效率</h1>
+        <p class="article-intro">非结构化笔记能解当下的急；结构化思维在半年后才显出价值——原作者休假去了，生产环境却一片告警。</p>
+      </header>
+      <div class="article-body">
+        <h2>结构不等于官僚主义</h2>
+        <p>结构不是给每页笔记套厚重模板，而是让决策有固定落点，让症状能链到原因，让标题在未来依然好搜。一段链到 <code>[[payment-module]]</code> 的简短 ADR，胜过十页没人打开的文档。</p>
+        <h2>工程笔记库里好用的几种模式</h2>
+        <ol>
+          <li><strong>枢纽笔记</strong> — 如 <code>[[Platform overview]]</code> 这类索引页，链到各服务与运维手册。</li>
+          <li><strong>决策记录</strong> — 简短的「我们选 X，因为 Y」笔记，在 Frontmatter 里写上日期和状态。</li>
+          <li><strong>事故关联</strong> — 把复盘链到受影响的组件，而不只留在 Slack 线程里。</li>
+          <li><strong>按问题组织代码片段</strong> — 示例代码放在以问题命名的笔记里，而不只以文件名命名。</li>
+        </ol>
+        <h2>工具要减摩擦，而不是加流程</h2>
+        <p>如果链两条笔记比复制一段文字还麻烦，结构就坚持不下去。Lunote 优化了快速写作与 <code>[[双链]]</code> 自动补全、知识侧栏里的反向链接，以及知识图谱——帮你看看「平台枢纽」是真的连出去了，还是成了孤立节点。</p>
+        <h2>用「找答案要多久」来衡量成效</h2>
+        <p>正确的指标不是笔记数量。不妨问：回答「为什么移动端 auth 行为是这样？」需要多久？如果路径是枢纽 → 服务笔记 → ADR → 事故记录，你的系统就在起作用。</p>
+      </div>
+      <aside class="article-cta">
+        <h2>在纯 Markdown 上建立结构</h2>
+        <p>双链、反向链接与大纲——Lunote 在 macOS、Windows 与 Linux 上内建提供。</p>
+        <a class="btn btn-primary" href="https://github.com/lunote-code/lunote/releases">免费下载</a>
+      </aside>
+    </article>
+  </main>
+  <footer class="site-footer"><nav aria-label="页脚"><a href="/zh/">首页</a><a href="/zh/#themes">主题</a><a href="/zh/blog/">博客</a></nav><p>© Lunote</p></footer>
+  <script src="/assets/theme.js" defer></script>
+</body>
+</html>

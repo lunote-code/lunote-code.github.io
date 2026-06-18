@@ -1,24 +1,151 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-<title>Lunote Blog — Developer Knowledge System Insights</title>
-<meta name="description" content="Developer productivity, knowledge systems, and PKM workflows." />
+  <meta charset="UTF-8" />
+  <script>
+    try {
+      if (localStorage.getItem('lunote-theme') === 'dark') {
+        document.documentElement.dataset.theme = 'dark';
+      }
+    } catch (e) {}
+  </script>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Lunote Blog — Notes, PKM &amp; Developer Productivity</title>
+  <meta name="description" content="Articles on local-first Markdown notes, personal knowledge management, wiki links, and developer workflows—with Lunote, a desktop app for thinking in connected .md files." />
+  <meta name="keywords" content="Lunote blog, PKM, knowledge management, Markdown, wiki links, local-first, developer productivity" />
+  <link rel="canonical" href="https://lunote-code.github.io/blog/" />
+  <link rel="alternate" hreflang="en" href="https://lunote-code.github.io/blog/" />
+  <link rel="alternate" hreflang="zh-Hans" href="https://lunote-code.github.io/zh/blog/" />
+  <link rel="alternate" hreflang="x-default" href="https://lunote-code.github.io/blog/" />
+  <link rel="icon" href="/assets/favicon.svg" type="image/svg+xml" />
+  <link rel="alternate" type="application/rss+xml" title="Lunote Blog" href="https://lunote-code.github.io/feed.xml" />
+
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="Lunote" />
+  <meta property="og:url" content="https://lunote-code.github.io/blog/" />
+  <meta property="og:title" content="Lunote Blog" />
+  <meta property="og:description" content="Local-first notes, knowledge systems, and Markdown workflows for developers and writers." />
+  <meta property="og:image" content="https://raw.githubusercontent.com/lunote-code/lunote/main/docs/assets/screenshots/head-view.png" />
+
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Lunote Blog" />
+  <meta name="twitter:description" content="Local-first notes, knowledge systems, and Markdown workflows." />
+
+  <link rel="stylesheet" href="/assets/site.css" />
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Blog",
+    "name": "Lunote Blog",
+    "url": "https://lunote-code.github.io/blog/",
+    "description": "Articles on local-first Markdown notes and knowledge systems.",
+    "publisher": { "@type": "Organization", "name": "Lunote", "url": "https://lunote-code.github.io/" }
+  }
+  </script>
 </head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
 
-<body style="background:#0b1220;color:white;font-family:Arial;padding:40px">
+  <header class="site-header">
+    <div class="site-header-inner">
+      <input type="checkbox" id="nav-toggle" class="nav-switch" aria-hidden="true" tabindex="-1" />
+      <a class="brand" href="/">
+        <img src="/assets/favicon.svg" width="28" height="28" alt="" />
+        Lunote
+      </a>
+      <nav class="site-nav" aria-label="Primary">
+        <a href="/">Home</a>
+        <a href="/#themes">Themes</a>
+        <a href="/blog/" aria-current="page">Blog</a>
+        <a href="https://github.com/lunote-code/lunote">GitHub</a>
+        <a class="btn btn-primary nav-download" href="https://github.com/lunote-code/lunote/releases">Download</a>
+      </nav>
+      <div class="header-actions">
+        <div class="lang-menu">
+          <button type="button" class="lang-toggle" aria-haspopup="listbox" aria-expanded="false" aria-label="Select language" title="Select language">
+            <svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 2a14.5 14.5 0 0 0 0 20 14.5 14.5 0 0 0 0-20"/><path d="M2 12h20"/></svg>
+          </button>
+          <ul class="lang-dropdown" role="listbox" aria-label="Language" hidden></ul>
+        </div>
+        <input type="checkbox" id="theme-dark" class="theme-switch" aria-label="Dark mode" tabindex="-1" />
+        <label for="theme-dark" class="theme-toggle" title="Toggle dark mode">
+          <svg class="icon-moon" viewBox="0 0 24 24" aria-hidden="true"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+          <svg class="icon-sun" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"/></svg>
+        </label>
+        <a class="btn btn-primary header-download" href="https://github.com/lunote-code/lunote/releases">Download</a>
+      </div>
+      <label for="nav-toggle" class="nav-menu-btn" aria-label="Open menu">
+        <svg class="nav-icon-open" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
+        <svg class="nav-icon-close" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 6l12 12M18 6 6 18"/></svg>
+      </label>
+    </div>
+  </header>
 
-<h1>Lunote Blog</h1>
+  <main id="main" class="page">
+    <header class="blog-hero">
+      <h1>Lunote Blog</h1>
+      <p>Practical writing on personal knowledge management, local-first tools, and Markdown workflows—how to turn folders of notes into systems that compound over time.</p>
+    </header>
 
-<p style="color:#94a3b8">
-SEO entry for developer productivity and knowledge systems.
-</p>
+    <div class="post-list">
+      <a class="post-card" href="/blog/knowledge-system-vs-notes/">
+        <div class="post-meta">
+          <time datetime="2026-03-08">March 8, 2026</time>
+          <span>6 min read</span>
+          <span class="post-tag">PKM</span>
+          <span class="post-tag">Second brain</span>
+        </div>
+        <h2>Why developers need a knowledge system—not just notes</h2>
+        <p>Developers collect snippets, meeting notes, and architecture sketches—but without links and structure, retrieval fails when context matters most. Here is how a system differs from a pile of files.</p>
+      </a>
 
-<ul>
-<li>Why developers need a knowledge system instead of notes</li>
-<li>Local-first apps and future of productivity tools</li>
-<li>How structured thinking improves coding workflows</li>
-<li>Markdown vs knowledge systems for developers</li>
-</ul>
+      <a class="post-card" href="/blog/local-first-productivity/">
+        <div class="post-meta">
+          <time datetime="2026-04-02">April 2, 2026</time>
+          <span>5 min read</span>
+          <span class="post-tag">Local-first</span>
+          <span class="post-tag">Privacy</span>
+        </div>
+        <h2>Local-first apps and the future of productivity tools</h2>
+        <p>Cloud notebooks promised sync and collaboration; local-first tools return ownership, speed, and offline reliability—while still letting you sync folders on your own terms.</p>
+      </a>
 
+      <a class="post-card" href="/blog/structured-thinking-for-coders/">
+        <div class="post-meta">
+          <time datetime="2026-05-10">May 10, 2026</time>
+          <span>7 min read</span>
+          <span class="post-tag">Workflow</span>
+          <span class="post-tag">Developers</span>
+        </div>
+        <h2>How structured thinking improves coding workflows</h2>
+        <p>Linking design decisions to code locations, ADRs, and runbooks turns one-off debugging into durable team memory—and makes onboarding measurably faster.</p>
+      </a>
+
+      <a class="post-card" href="/blog/markdown-vs-knowledge-systems/">
+        <div class="post-meta">
+          <time datetime="2026-06-01">June 1, 2026</time>
+          <span>6 min read</span>
+          <span class="post-tag">Markdown</span>
+          <span class="post-tag">Wiki links</span>
+        </div>
+        <h2>Markdown files vs knowledge systems for developers</h2>
+        <p>Plain Markdown is the right foundation—but folders alone are not a graph. What changes when you add wiki links, backlinks, and lightweight metadata on top of .md files.</p>
+      </a>
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <nav aria-label="Footer">
+      <a href="/">Home</a>
+      <a href="/#themes">Themes</a>
+      <a href="/blog/">Blog</a>
+      <a href="https://github.com/lunote-code/lunote/releases">Download</a>
+      <a href="https://github.com/lunote-code/lunote">GitHub</a>
+      <a href="/feed.xml">RSS</a>
+    </nav>
+    <p>© Lunote · Local Markdown notes with wiki links</p>
+  </footer>
+
+  <script src="/assets/theme.js" defer></script>
 </body>
 </html>

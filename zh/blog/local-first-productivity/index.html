@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="zh-Hans">
+<head>
+  <meta charset="UTF-8" />
+  <script>try{if(localStorage.getItem('lunote-theme')==='dark')document.documentElement.dataset.theme='dark';}catch(e){}</script>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>本地优先：生产力工具正在往哪走 | Lunote 博客</title>
+  <meta name="description" content="可离线、基于文件的笔记应用为何重新受到青睐：数据所有权、响应速度、隐私保护，以及按你的方式同步——全部建立在纯 Markdown 文件夹之上。" />
+  <link rel="canonical" href="https://lunote-code.github.io/zh/blog/local-first-productivity/" />
+  <link rel="alternate" hreflang="en" href="https://lunote-code.github.io/blog/local-first-productivity/" />
+  <link rel="alternate" hreflang="zh-Hans" href="https://lunote-code.github.io/zh/blog/local-first-productivity/" />
+  <link rel="alternate" hreflang="x-default" href="https://lunote-code.github.io/blog/local-first-productivity/" />
+  <link rel="icon" href="/assets/favicon.svg" type="image/svg+xml" />
+  <meta property="og:type" content="article" />
+  <meta property="og:site_name" content="Lunote" />
+  <meta property="og:locale" content="zh_CN" />
+  <meta property="og:url" content="https://lunote-code.github.io/zh/blog/local-first-productivity/" />
+  <meta property="og:title" content="本地优先：生产力工具正在往哪走" />
+  <meta property="og:description" content="云端笔记曾承诺同步；本地优先工具把数据所有权、响应速度和离线能力还给你。" />
+  <meta property="og:image" content="https://raw.githubusercontent.com/lunote-code/lunote/main/docs/assets/screenshots/head-view.png" />
+  <meta property="article:published_time" content="2026-04-02" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <link rel="stylesheet" href="/assets/site.css" />
+</head>
+<body>
+  <a class="skip-link" href="#main">跳转到正文</a>
+  <header class="site-header">
+    <div class="site-header-inner">
+      <input type="checkbox" id="nav-toggle" class="nav-switch" aria-hidden="true" tabindex="-1" />
+      <a class="brand" href="/zh/"><img src="/assets/favicon.svg" width="28" height="28" alt="" /> Lunote</a>
+      <nav class="site-nav" aria-label="主导航">
+        <a href="/zh/">首页</a>
+        <a href="/zh/#themes">主题</a>
+        <a href="/zh/blog/" aria-current="page">博客</a>
+        <a href="https://github.com/lunote-code/lunote">GitHub</a>
+        <a class="btn btn-primary nav-download" href="https://github.com/lunote-code/lunote/releases">下载</a>
+      </nav>
+      <div class="header-actions">
+        <div class="lang-menu">
+          <button type="button" class="lang-toggle" aria-haspopup="listbox" aria-expanded="false" aria-label="选择语言" title="选择语言">
+            <svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 2a14.5 14.5 0 0 0 0 20 14.5 14.5 0 0 0 0-20"/><path d="M2 12h20"/></svg>
+          </button>
+          <ul class="lang-dropdown" role="listbox" aria-label="语言" hidden></ul>
+        </div>
+        <input type="checkbox" id="theme-dark" class="theme-switch" aria-label="深色模式" tabindex="-1" />
+        <label for="theme-dark" class="theme-toggle" title="切换深色模式">
+          <svg class="icon-moon" viewBox="0 0 24 24" aria-hidden="true"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+          <svg class="icon-sun" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"/></svg>
+        </label>
+        <a class="btn btn-primary header-download" href="https://github.com/lunote-code/lunote/releases">下载</a>
+      </div>
+      <label for="nav-toggle" class="nav-menu-btn" aria-label="打开菜单">
+        <svg class="nav-icon-open" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
+        <svg class="nav-icon-close" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 6l12 12M18 6 6 18"/></svg>
+      </label>
+    </div>
+  </header>
+  <main id="main" class="page">
+    <nav class="breadcrumb" aria-label="面包屑"><a href="/zh/">首页</a> / <a href="/zh/blog/">博客</a> / 本地优先</nav>
+    <article>
+      <header class="article-header">
+        <div class="post-meta"><time datetime="2026-04-02">2026年4月2日</time><span>约 5 分钟</span><span class="post-tag">本地优先</span></div>
+        <h1>本地优先：生产力工具正在往哪走</h1>
+        <p class="article-intro">过去十年，默认选项很简单：笔记存在别人的服务器上，登录账号才能用，离线就几乎没法搜。本地优先软件反其道而行——以你的设备为准，同步变成可选项。</p>
+      </header>
+      <div class="article-body">
+        <h2>「本地优先」到底指什么</h2>
+        <p>本地优先不等于「永远不同步」。它意味着：文件和编辑在离线时也能完整使用；你可以用常规工具查看、备份数据；协作通过你掌控的方式完成——Git、Syncthing、iCloud Drive，或 NAS 上的共享文件夹。</p>
+        <h2>个人和团队为什么转向</h2>
+        <ul>
+          <li><strong>响应速度</strong> — 打开笔记几乎瞬间完成，不必等 API 转圈。</li>
+          <li><strong>长期可用</strong> — Markdown 文件比任何单一厂商的导出格式更经得起时间考验。</li>
+          <li><strong>隐私</strong> — 敏感草稿不必离开你的电脑。</li>
+          <li><strong>可迁移</strong> — 换应用不必大迁移，让另一个编辑器指向同一文件夹即可。</li>
+        </ul>
+        <h2>取舍仍然存在——但在缩小</h2>
+        <p>实时多人协同、移动端的快速记录，曾是云端产品的强项。如今，桌面端的本地优先工具已经能覆盖知识工作者最在意的写作与链接流程；移动端的缺口，很多人会用「收件箱笔记 + 同步到同一文件夹」来补上。</p>
+        <h2>Lunote 在这张版图里的位置</h2>
+        <p>Lunote 正是为这种模型设计的：打开一个 <code>.md</code> 目录，用顺手的可视化或源码模式编辑，用 wiki 语法串联笔记，需要时再导出 PDF 或 Word——既不用注册账号，也不用把笔记库上传到云端。</p>
+      </div>
+      <aside class="article-cta">
+        <h2>在你自己的文件上离线工作</h2>
+        <p>下载 macOS、Windows 或 Linux 版 Lunote，直接打开现有 Markdown 文件夹。</p>
+        <a class="btn btn-primary" href="https://github.com/lunote-code/lunote/releases">下载 Lunote</a>
+      </aside>
+    </article>
+  </main>
+  <footer class="site-footer"><nav aria-label="页脚"><a href="/zh/">首页</a><a href="/zh/#themes">主题</a><a href="/zh/blog/">博客</a></nav><p>© Lunote</p></footer>
+  <script src="/assets/theme.js" defer></script>
+</body>
+</html>

@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <script>
+    try {
+      if (localStorage.getItem('lunote-theme') === 'dark') {
+        document.documentElement.dataset.theme = 'dark';
+      }
+    } catch (e) {}
+  </script>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Local-First Apps and the Future of Productivity | Lunote Blog</title>
+  <meta name="description" content="Why offline-capable, file-based note apps are gaining ground: ownership, speed, privacy, and sync on your terms—with plain Markdown folders." />
+  <link rel="canonical" href="https://lunote-code.github.io/blog/local-first-productivity/" />
+  <link rel="alternate" hreflang="en" href="https://lunote-code.github.io/blog/local-first-productivity/" />
+  <link rel="alternate" hreflang="zh-Hans" href="https://lunote-code.github.io/zh/blog/local-first-productivity/" />
+  <link rel="alternate" hreflang="x-default" href="https://lunote-code.github.io/blog/local-first-productivity/" />
+  <link rel="icon" href="/assets/favicon.svg" type="image/svg+xml" />
+  <meta property="og:type" content="article" />
+  <meta property="og:site_name" content="Lunote" />
+  <meta property="og:locale" content="en_US" />
+  <meta property="og:url" content="https://lunote-code.github.io/blog/local-first-productivity/" />
+  <meta property="og:title" content="Local-first apps and the future of productivity tools" />
+  <meta property="og:description" content="Cloud notebooks promised sync; local-first tools return ownership, speed, and offline reliability." />
+  <meta property="og:image" content="https://raw.githubusercontent.com/lunote-code/lunote/main/docs/assets/screenshots/head-view.png" />
+  <meta property="article:published_time" content="2026-04-02" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Local-first apps and the future of productivity tools" />
+  <meta name="twitter:description" content="Cloud notebooks promised sync; local-first tools return ownership, speed, and offline reliability." />
+  <meta name="twitter:image" content="https://raw.githubusercontent.com/lunote-code/lunote/main/docs/assets/screenshots/head-view.png" />
+  <link rel="stylesheet" href="/assets/site.css" />
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BlogPosting",
+    "headline": "Local-first apps and the future of productivity tools",
+    "description": "Why offline-capable, file-based note apps are gaining ground: ownership, speed, privacy, and sync on your terms.",
+    "datePublished": "2026-04-02",
+    "author": { "@type": "Organization", "name": "Lunote" },
+    "publisher": { "@type": "Organization", "name": "Lunote", "url": "https://lunote-code.github.io/" },
+    "mainEntityOfPage": "https://lunote-code.github.io/blog/local-first-productivity/",
+    "image": "https://raw.githubusercontent.com/lunote-code/lunote/main/docs/assets/screenshots/head-view.png"
+  }
+  </script>
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+  <header class="site-header">
+    <div class="site-header-inner">
+      <input type="checkbox" id="nav-toggle" class="nav-switch" aria-hidden="true" tabindex="-1" />
+      <a class="brand" href="/"><img src="/assets/favicon.svg" width="28" height="28" alt="" /> Lunote</a>
+      <nav class="site-nav" aria-label="Primary">
+        <a href="/">Home</a>
+        <a href="/#themes">Themes</a>
+        <a href="/blog/" aria-current="page">Blog</a>
+        <a href="https://github.com/lunote-code/lunote">GitHub</a>
+        <a class="btn btn-primary nav-download" href="https://github.com/lunote-code/lunote/releases">Download</a>
+      </nav>
+      <div class="header-actions">
+        <div class="lang-menu">
+          <button type="button" class="lang-toggle" aria-haspopup="listbox" aria-expanded="false" aria-label="Select language" title="Select language">
+            <svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 2a14.5 14.5 0 0 0 0 20 14.5 14.5 0 0 0 0-20"/><path d="M2 12h20"/></svg>
+          </button>
+          <ul class="lang-dropdown" role="listbox" aria-label="Language" hidden></ul>
+        </div>
+        <input type="checkbox" id="theme-dark" class="theme-switch" aria-label="Dark mode" tabindex="-1" />
+        <label for="theme-dark" class="theme-toggle" title="Toggle dark mode">
+          <svg class="icon-moon" viewBox="0 0 24 24" aria-hidden="true"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+          <svg class="icon-sun" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"/></svg>
+        </label>
+        <a class="btn btn-primary header-download" href="https://github.com/lunote-code/lunote/releases">Download</a>
+      </div>
+      <label for="nav-toggle" class="nav-menu-btn" aria-label="Open menu">
+        <svg class="nav-icon-open" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
+        <svg class="nav-icon-close" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 6l12 12M18 6 6 18"/></svg>
+      </label>
+    </div>
+  </header>
+  <main id="main" class="page">
+    <nav class="breadcrumb"><a href="/">Home</a> / <a href="/blog/">Blog</a> / Local-first productivity</nav>
+    <article>
+      <header class="article-header">
+        <div class="post-meta"><time datetime="2026-04-02">April 2, 2026</time><span>5 min read</span><span class="post-tag">Local-first</span></div>
+        <h1>Local-first apps and the future of productivity tools</h1>
+        <p class="article-intro">
+          The default for a decade was simple: your notes live in someone else's cloud, behind an account,
+          searchable only while online. Local-first software flips that—your device is the source of truth, and sync is optional.
+        </p>
+      </header>
+      <div class="article-body">
+        <h2>What “local-first” actually means</h2>
+        <p>
+          Local-first does not mean “never sync.” It means files and edits work fully offline, you can inspect and back up data with normal tools,
+          and collaboration happens through mechanisms you control—Git, Syncthing, iCloud Drive, or a shared folder on a NAS.
+        </p>
+        <h2>Why teams and individuals are switching</h2>
+        <ul>
+          <li><strong>Latency</strong> — opening a note is instant; no spinner waiting on an API.</li>
+          <li><strong>Longevity</strong> — Markdown files outlive any single vendor's export format.</li>
+          <li><strong>Privacy</strong> — sensitive drafts never need to leave your machine.</li>
+          <li><strong>Portability</strong> — switch apps without a migration project; point another editor at the same folder.</li>
+        </ul>
+        <h2>The trade-offs are real—but shrinking</h2>
+        <p>
+          Real-time multi-user editing and mobile-first capture were cloud strengths.
+          Desktop local-first tools now cover the writing and linking workflows that knowledge workers care about most,
+          while phones remain a capture gap many users solve with quick inbox notes synced into the same folder.
+        </p>
+        <h2>Lunote in this landscape</h2>
+        <p>
+          Lunote is built for that model: open a directory of <code>.md</code> files, edit with a polished visual or source mode,
+          link notes with wiki syntax, and export when you need PDF or Word—without creating an account or uploading your vault.
+        </p>
+      </div>
+      <aside class="article-cta">
+        <h2>Work offline on files you own</h2>
+        <p>Download Lunote for macOS, Windows, or Linux and open your existing Markdown folder.</p>
+        <a class="btn btn-primary" href="https://github.com/lunote-code/lunote/releases">Get Lunote</a>
+      </aside>
+    </article>
+  </main>
+  <footer class="site-footer"><nav aria-label="Footer"><a href="/">Home</a><a href="/#themes">Themes</a><a href="/blog/">Blog</a></nav><p>© Lunote</p></footer>
+  <script src="/assets/theme.js" defer></script>
+</body>
+</html>

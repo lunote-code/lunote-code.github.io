@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="zh-Hans">
+<head>
+  <meta charset="UTF-8" />
+  <script>try{if(localStorage.getItem('lunote-theme')==='dark')document.documentElement.dataset.theme='dark';}catch(e){}</script>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>开发者需要的不是笔记堆，而是知识系统 | Lunote 博客</title>
+  <meta name="description" content="散落的笔记只能记下事实；知识系统还能记录关系与上下文。了解开发者为何需要双链、反向链接与结构化的个人知识管理。" />
+  <link rel="canonical" href="https://lunote-code.github.io/zh/blog/knowledge-system-vs-notes/" />
+  <link rel="alternate" hreflang="en" href="https://lunote-code.github.io/blog/knowledge-system-vs-notes/" />
+  <link rel="alternate" hreflang="zh-Hans" href="https://lunote-code.github.io/zh/blog/knowledge-system-vs-notes/" />
+  <link rel="alternate" hreflang="x-default" href="https://lunote-code.github.io/blog/knowledge-system-vs-notes/" />
+  <link rel="icon" href="/assets/favicon.svg" type="image/svg+xml" />
+  <meta property="og:type" content="article" />
+  <meta property="og:site_name" content="Lunote" />
+  <meta property="og:locale" content="zh_CN" />
+  <meta property="og:url" content="https://lunote-code.github.io/zh/blog/knowledge-system-vs-notes/" />
+  <meta property="og:title" content="开发者需要的不是笔记堆，而是知识系统" />
+  <meta property="og:description" content="散落的笔记只能记下事实；知识系统还能留下关系、上下文和可复用的思考方式。" />
+  <meta property="og:image" content="https://raw.githubusercontent.com/lunote-code/lunote/main/docs/assets/screenshots/graph.png" />
+  <meta property="article:published_time" content="2026-03-08" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <link rel="stylesheet" href="/assets/site.css" />
+</head>
+<body>
+  <a class="skip-link" href="#main">跳转到正文</a>
+  <header class="site-header">
+    <div class="site-header-inner">
+      <input type="checkbox" id="nav-toggle" class="nav-switch" aria-hidden="true" tabindex="-1" />
+      <a class="brand" href="/zh/"><img src="/assets/favicon.svg" width="28" height="28" alt="" /> Lunote</a>
+      <nav class="site-nav" aria-label="主导航">
+        <a href="/zh/">首页</a>
+        <a href="/zh/#themes">主题</a>
+        <a href="/zh/blog/" aria-current="page">博客</a>
+        <a href="https://github.com/lunote-code/lunote">GitHub</a>
+        <a class="btn btn-primary nav-download" href="https://github.com/lunote-code/lunote/releases">下载</a>
+      </nav>
+      <div class="header-actions">
+        <div class="lang-menu">
+          <button type="button" class="lang-toggle" aria-haspopup="listbox" aria-expanded="false" aria-label="选择语言" title="选择语言">
+            <svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 2a14.5 14.5 0 0 0 0 20 14.5 14.5 0 0 0 0-20"/><path d="M2 12h20"/></svg>
+          </button>
+          <ul class="lang-dropdown" role="listbox" aria-label="语言" hidden></ul>
+        </div>
+        <input type="checkbox" id="theme-dark" class="theme-switch" aria-label="深色模式" tabindex="-1" />
+        <label for="theme-dark" class="theme-toggle" title="切换深色模式">
+          <svg class="icon-moon" viewBox="0 0 24 24" aria-hidden="true"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+          <svg class="icon-sun" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"/></svg>
+        </label>
+        <a class="btn btn-primary header-download" href="https://github.com/lunote-code/lunote/releases">下载</a>
+      </div>
+      <label for="nav-toggle" class="nav-menu-btn" aria-label="打开菜单">
+        <svg class="nav-icon-open" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
+        <svg class="nav-icon-close" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 6l12 12M18 6 6 18"/></svg>
+      </label>
+    </div>
+  </header>
+  <main id="main" class="page">
+    <nav class="breadcrumb" aria-label="面包屑"><a href="/zh/">首页</a> / <a href="/zh/blog/">博客</a> / 知识系统与笔记</nav>
+    <article>
+      <header class="article-header">
+        <div class="post-meta"><time datetime="2026-03-08">2026年3月8日</time><span>约 6 分钟</span><span class="post-tag">PKM</span></div>
+        <h1>开发者需要的不是笔记堆，而是知识系统</h1>
+        <p class="article-intro">多数开发者已经在记笔记。真正的短板不在「能不能记下来」，而在「需要时能不能找回来」——三个月后再排查同一个 bug、带新人接手，或把两个项目的想法串起来时，差距就会显现。</p>
+      </header>
+      <div class="article-body">
+        <h2>笔记存信息，系统存关联</h2>
+        <p>一条笔记可能写着「Redis 缓存 TTL 是 300 秒」。知识系统还会把它链到 <code>[[auth-service]]</code>、<code>[[incident-2025-11]]</code>，以及你的缓存失效运维手册。当其中任一上下文发生变化，你顺着链接就能追过去，而不必从零开始搜索。</p>
+        <h2>一套够用的知识系统，最少需要什么</h2>
+        <ul>
+          <li><strong>纯文本文件</strong> — 磁盘上的 Markdown，可用 Git 管理版本，用任意工具同步。</li>
+          <li><strong>双链</strong> — <code>[[笔记标题]]</code> 在不依赖僵化文件夹的前提下，把相关想法连起来。</li>
+          <li><strong>反向链接</strong> — 查看笔记库里还有哪些地方引用了同一个概念。</li>
+          <li><strong>知识图谱</strong> — 发现主题聚类、孤立笔记，以及概念之间缺失的桥梁。</li>
+        </ul>
+        <blockquote>不必第一天就搭完美分类体系。写完下一条笔记时，给它链到一条相关笔记——这就已经是一个系统了。</blockquote>
+        <h2>为什么开发者会先尝到苦果</h2>
+        <p>代码库本身就是一张网：模块互相引用，服务互相调用，文档指向工单。开发者习惯用「引用」来思考——但传统线性笔记应用会把这种结构藏起来。Lunote 这类工具把同样的链接模型带到个人文档里，同时又不把文件锁进专有数据库。</p>
+        <h2>不必推倒重来</h2>
+        <p>直接打开你已经在用的文件夹——Obsidian 笔记库、Typora 项目，或某个 <code>docs/</code> 目录。在原本会粘贴 URL、或复制整段文字的地方，改成写一条双链。让反向链接告诉你：哪些笔记该有更清晰的标题，或开头加一段简短摘要。</p>
+      </div>
+      <aside class="article-cta">
+        <h2>用你现有的 .md 文件夹试试</h2>
+        <p>Lunote 可直接打开本地 Markdown 笔记库，内建双链、反向链接与知识图谱——无需导入。</p>
+        <a class="btn btn-primary" href="https://github.com/lunote-code/lunote/releases">下载 Lunote</a>
+      </aside>
+    </article>
+  </main>
+  <footer class="site-footer"><nav aria-label="页脚"><a href="/zh/">首页</a><a href="/zh/#themes">主题</a><a href="/zh/blog/">博客</a></nav><p>© Lunote</p></footer>
+  <script src="/assets/theme.js" defer></script>
+</body>
+</html>
